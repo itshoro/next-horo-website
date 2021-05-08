@@ -1,0 +1,35 @@
+.gradient {
+  background-image: linear-gradient(
+    to bottom right,
+    theme("colors.foxfire"),
+    theme("colors.ember")
+  );
+}
+
+.clipWave {
+  animation: slide-reverse ease-in 300ms 1;
+  transform: translateY(135px);
+}
+
+.gradient:hover .clipWave,
+.gradient:focus .clipWave {
+  animation: slide ease-out 450ms 1;
+  transform: translateY(0px);
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(-135px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+@keyframes slide-reverse {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-135px);
+  }
+}

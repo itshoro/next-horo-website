@@ -1,10 +1,18 @@
 import styles from "./index.module.css";
+import requiredIf from "react-required-if";
+import PropTypes from "prop-types";
 
 const ScrollItems = ({ children, className, style }) => (
   <div style={style} className={className}>
     {children}
   </div>
 );
+
+ScrollItems.PropTypes = {
+  className: PropTypes.string,
+  style: PropTypes.string,
+  children: PropTypes.node
+};
 
 const ScrollContainer = ({
   items,
@@ -16,7 +24,7 @@ const ScrollContainer = ({
   align,
   style,
   type,
-  dir,
+  dir
 }) => {
   if (!items) {
     throw new Error(
@@ -80,9 +88,9 @@ const ScrollContainer = ({
         resolveAlign(align),
         resolveAlign(alignX, "inline"),
         resolveAlign(alignY, "block"),
-        className,
+        className
       ]
-        .filter((x) => x)
+        .filter(x => x)
         .join(" ")}
       dir={dir || "ltr"}
       style={style}
@@ -90,6 +98,28 @@ const ScrollContainer = ({
       {items}
     </div>
   );
+};
+
+ScrollContainer.PropTypes = {
+  items: PropTypes.exact(ScrollItems).isRequired,
+  className: PropTypes.string,
+  direction: PropTypes.oneOf(["x", "y", "both"]).isRequired,
+  hideScrollbar: PropTypes.bool,
+  style: PropTypes.string,
+  type: PropTypes.oneOf(["mandatory", "proximity"]).isRequired,
+  dir: PropTypes.string,
+  alignX: requiredIf(
+    PropTypes.oneOf(["start", "center", "end", "none"]),
+    props => props.align === undefined
+  ),
+  alignY: requiredIf(
+    PropTypes.oneOf(["start", "center", "end", "none"]),
+    props => props.align === undefined
+  ),
+  align: requiredIf(
+    PropTypes.oneOf(["start", "center", "end", "none"]),
+    props => props.alignX === undefined && props.alignY === undefined
+  )
 };
 
 export { ScrollContainer, ScrollItems };
