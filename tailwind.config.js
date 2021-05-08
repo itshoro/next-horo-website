@@ -6,7 +6,12 @@ module.exports = {
   ],
   darkMode: "media", // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        foxfire: "hsl(348deg 91% 50%)",
+        ember: "hsl(331deg 88% 46%)"
+      }
+    },
   },
   variants: {
     extend: {},

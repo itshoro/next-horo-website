@@ -1,64 +1,36 @@
-import Head from 'next/head'
+import { AnimatedLink } from "@/components/links";
+import { ScrollContainer } from "@/components/containers";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Tim Nelke</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <div className="min-h-screen flex">
+        <div className="m-auto w-[375px] h-[812px] overflow-auto shadow-xl rounded-xl bg-black text-[#b7b7b7]">
+          <main className="mx-8">
+            <div>
+              <h1 className="font-bold text-white text-5xl">
+                Ohayo, my name is <br />{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-foxfire to-ember">
+                  Tim Nelke
+                </span>
+                .
+              </h1>
+            </div>
+            <span>
+              Based in Willich, Germany, I’m a computer science student in my
+              last year of university, who realizes dreams as reality.
+            </span>
 
-        <p>
-          Get started by editing{' '}
-          <code>pages/index.js</code>
-        </p>
-
-        <div>
-          <a href="https://nextjs.org/docs">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-           
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-           
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+            <AnimatedLink title="View my resume" href="#" />
+          </main>
         </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" />
-        </a>
-      </footer>
+      </div>
     </div>
-  )
+  );
 }
