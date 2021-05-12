@@ -1,3 +1,3 @@
-import { ScrollContainer, ScrollItems } from "./ScrollContainer";
+import { Carousell, CarousellItems } from "./Carousell";
 
-export { ScrollContainer, ScrollItems };
+export { Carousell, CarousellItems };
