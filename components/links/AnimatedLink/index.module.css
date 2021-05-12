@@ -7,29 +7,13 @@
 }
 
 .clipWave {
-  animation: slide-reverse ease-in 300ms 1;
-  transform: translateY(135px);
+  --position: -135px;
+  transform: translateY(var(--position));
+  transition: transform ease-in 125ms;
 }
 
 .gradient:hover .clipWave,
 .gradient:focus .clipWave {
-  animation: slide ease-out 450ms 1;
-  transform: translateY(0px);
-}
-
-@keyframes slide {
-  from {
-    transform: translateY(-135px);
-  }
-  to {
-    transform: translateY(0px);
-  }
-}
-@keyframes slide-reverse {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-135px);
-  }
+  --position: 0px;
+  transition: transform ease-out 150ms;
 }

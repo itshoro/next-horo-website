@@ -2,21 +2,22 @@ import styles from "./index.module.css";
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-const AnimatedLink = ({ title, href, onClick, onMouseEnter }) => (
+const AnimatedLink = ({ title, className, href, onClick, onMouseEnter }) => (
   <Link href={href} onClick={onClick} onMouseEnter={onMouseEnter}>
     <a
       className={[
-        "inline-flex items-center space-x-4 bg-clip-text text-transparent",
+        "inline-flex items-center space-x-2 bg-clip-text text-transparent",
+        className,
         styles.gradient
       ]
         .filter(x => x)
         .join(" ")}
     >
-      <span className="align-middle">{title} </span>
+      <span className="align-middle">{title}</span>
       <span className="relative flex items-center justify-center">
         <div className="relative">
           <svg
-            className="h-8"
+            className="h-8 select-none"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 120 120"
           >
@@ -46,11 +47,11 @@ const AnimatedLink = ({ title, href, onClick, onMouseEnter }) => (
               </clipPath>
             </defs>
             <g clip-path="url(#a)">
-              <circle cx="60" cy="60" r="58" fill="url(#b)" />
+              <circle x="1" y="1" cx="50%" cy="50%" r="58" fill="url(#b)" />
             </g>
             <circle
-              cx="60"
-              cy="60"
+              cx="50%"
+              cy="50%"
               r="58"
               fill="transparent"
               stroke="url(#b)"
@@ -58,8 +59,10 @@ const AnimatedLink = ({ title, href, onClick, onMouseEnter }) => (
             />
             <text
               className="mix-blend-difference"
-              x="30"
-              y="80"
+              x="50%"
+              y="50%"
+              textAnchor="middle"
+              dominantBaseline="central"
               fill="url(#b)"
               fontSize="64"
             >
@@ -75,6 +78,7 @@ const AnimatedLink = ({ title, href, onClick, onMouseEnter }) => (
 AnimatedLink.propTypes = {
   title: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
+  className: PropTypes.string,
   onClick: PropTypes.func,
   onMouseEnter: PropTypes.func
 };
