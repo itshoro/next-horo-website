@@ -9,13 +9,17 @@
 
   scroll-snap-type: var(--scroll-direction) var(--scroll-type);
 }
-.viewArea.hideScrollbar::-webkit-scrollbar {
-  display: none;
+
+@media (hover: none) {
+  .viewArea.hideScrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .viewArea.hideScrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
-.viewArea.hideScrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+
 .viewArea > div {
   @apply inline-flex;
 }

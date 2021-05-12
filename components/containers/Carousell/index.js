@@ -2,29 +2,31 @@ import styles from "./index.module.css";
 import requiredIf from "react-required-if";
 import PropTypes from "prop-types";
 
-const CarousellItems = ({ children, className, style }) => (
+const CarousellItems = ({ children, className, useBumper = true, style }) => (
   <div style={style} className={className}>
     {children}
+    {useBumper && <div className="relative w-3" />}
   </div>
 );
 
 CarousellItems.PropTypes = {
   className: PropTypes.string,
   style: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
+  useBumper: PropTypes.bool,
 };
 
 const Carousell = ({
   items,
   className,
   direction,
-  hideScrollbar = false,
+  mobileHideScrollbars = false,
   alignX,
   alignY,
   align,
   style,
   type,
-  dir
+  dir,
 }) => {
   if (!items) {
     throw new Error(
@@ -82,15 +84,15 @@ const Carousell = ({
     <div
       className={[
         styles.viewArea,
-        hideScrollbar && styles.hideScrollbar,
+        mobileHideScrollbars && styles.hideScrollbars,
         styles[direction],
         styles[type],
         resolveAlign(align),
         resolveAlign(alignX, "inline"),
         resolveAlign(alignY, "block"),
-        className
+        className,
       ]
-        .filter(x => x)
+        .filter((x) => x)
         .join(" ")}
       dir={dir || "ltr"}
       style={style}
@@ -104,22 +106,22 @@ Carousell.PropTypes = {
   items: PropTypes.exact(CarousellItems).isRequired,
   className: PropTypes.string,
   direction: PropTypes.oneOf(["x", "y", "both"]).isRequired,
-  hideScrollbar: PropTypes.bool,
+  useBumper: PropTypes.bool,
   style: PropTypes.string,
   type: PropTypes.oneOf(["mandatory", "proximity"]).isRequired,
   dir: PropTypes.string,
   alignX: requiredIf(
     PropTypes.oneOf(["start", "center", "end", "none"]),
-    props => props.align === undefined
+    (props) => props.align === undefined
   ),
   alignY: requiredIf(
     PropTypes.oneOf(["start", "center", "end", "none"]),
-    props => props.align === undefined
+    (props) => props.align === undefined
   ),
   align: requiredIf(
     PropTypes.oneOf(["start", "center", "end", "none"]),
-    props => props.alignX === undefined && props.alignY === undefined
-  )
+    (props) => props.alignX === undefined && props.alignY === undefined
+  ),
 };
 
 export { Carousell, CarousellItems };
