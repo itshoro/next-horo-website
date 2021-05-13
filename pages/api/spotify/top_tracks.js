@@ -5,6 +5,7 @@ export default async (_, res) => {
 
   const tracks = items.map((track) => ({
     artists: track.artists.map((artist) => artist.name).join(", "),
+    artistsUrl: track.artists[0].external_urls.spotify,
     images: track.album.images,
     songUrl: track.external_urls.spotify,
     title: track.name,
