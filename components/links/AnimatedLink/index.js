@@ -6,11 +6,11 @@ const AnimatedLink = ({ title, className, href, onClick, onMouseEnter }) => (
   <Link href={href} onClick={onClick} onMouseEnter={onMouseEnter}>
     <a
       className={[
-        "inline-flex items-center space-x-2 bg-clip-text text-transparent",
+        "inline-flex items-center space-x-2 bg-clip-text text-transparent focus:pl-2 hover:pl-2 transition-all",
         className,
-        styles.gradient
+        styles.gradient,
       ]
-        .filter(x => x)
+        .filter((x) => x)
         .join(" ")}
     >
       <span className="align-middle">{title}</span>
@@ -23,8 +23,8 @@ const AnimatedLink = ({ title, className, href, onClick, onMouseEnter }) => (
           >
             <defs>
               <linearGradient id="b" x2="1" y2="1">
-                <stop offset="0%" stop-color="hsl(348deg 91% 50%)" />
-                <stop offset="100%" stop-color="hsl(331deg 88% 46%)" />
+                <stop offset="0%" stopColor="hsl(348deg 91% 50%)" />
+                <stop offset="100%" stopColor="hsl(331deg 88% 46%)" />
               </linearGradient>
               <clipPath
                 id="a"
@@ -32,7 +32,7 @@ const AnimatedLink = ({ title, className, href, onClick, onMouseEnter }) => (
               >
                 <path
                   d="M101.807 123.37c10-.352 18.193 5.401 18.193 5.401V0H0v128.771s9.701-5.227 17.069-5.227 10.464 6.314 20.877 6.314c10.175 0 12.703-4.209 22.053-4.209s11.981 5.438 20.578 5.438 11.23-7.365 21.23-7.717z"
-                  class={styles.clipWave}
+                  className={styles.clipWave}
                 >
                   <animate
                     attributeName="d"
@@ -46,7 +46,7 @@ const AnimatedLink = ({ title, className, href, onClick, onMouseEnter }) => (
                 </path>
               </clipPath>
             </defs>
-            <g clip-path="url(#a)">
+            <g clipPath="url(#a)">
               <circle x="1" y="1" cx="50%" cy="50%" r="58" fill="url(#b)" />
             </g>
             <circle
@@ -80,7 +80,7 @@ AnimatedLink.propTypes = {
   href: PropTypes.string.isRequired,
   className: PropTypes.string,
   onClick: PropTypes.func,
-  onMouseEnter: PropTypes.func
+  onMouseEnter: PropTypes.func,
 };
 
 export default AnimatedLink;
