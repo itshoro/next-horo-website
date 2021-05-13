@@ -127,7 +127,7 @@ export default function Home() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g clip-path="url(#clip0)">
+              <g clipPath="url(#clip0)">
                 <path
                   d="M5.33561 16.4998C6.04286 16.4998 6.72113 16.2189 7.22123 15.7188C7.72133 15.2187 8.00228 14.5404 8.00228 13.8332V11.1665H5.33561C4.62837 11.1665 3.95009 11.4475 3.44999 11.9476C2.9499 12.4476 2.66895 13.1259 2.66895 13.8332C2.66895 14.5404 2.9499 15.2187 3.44999 15.7188C3.95009 16.2189 4.62837 16.4998 5.33561 16.4998Z"
                   fill="#0ACF83"
@@ -189,8 +189,8 @@ export default function Home() {
                   y2="8.09601"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#5A9FD4" />
-                  <stop offset="1" stop-color="#306998" />
+                  <stop stopColor="#5A9FD4" />
+                  <stop offset="1" stopColor="#306998" />
                 </linearGradient>
                 <linearGradient
                   id="paint1_linear"
@@ -200,8 +200,8 @@ export default function Home() {
                   y2="9.92943"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#FFD43B" />
-                  <stop offset="1" stop-color="#FFE873" />
+                  <stop stopColor="#FFD43B" />
+                  <stop offset="1" stopColor="#FFE873" />
                 </linearGradient>
               </defs>
             </svg>
@@ -219,7 +219,7 @@ export default function Home() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g clip-path="url(#clip0)">
+              <g clipPath="url(#clip0)">
                 <path
                   d="M5.33561 16.4998C6.04286 16.4998 6.72113 16.2189 7.22123 15.7188C7.72133 15.2187 8.00228 14.5404 8.00228 13.8332V11.1665H5.33561C4.62837 11.1665 3.95009 11.4475 3.44999 11.9476C2.9499 12.4476 2.66895 13.1259 2.66895 13.8332C2.66895 14.5404 2.9499 15.2187 3.44999 15.7188C3.95009 16.2189 4.62837 16.4998 5.33561 16.4998Z"
                   fill="#0ACF83"
@@ -281,8 +281,8 @@ export default function Home() {
                   y2="8.09601"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#5A9FD4" />
-                  <stop offset="1" stop-color="#306998" />
+                  <stop stopColor="#5A9FD4" />
+                  <stop offset="1" stopColor="#306998" />
                 </linearGradient>
                 <linearGradient
                   id="paint1_linear"
@@ -292,8 +292,8 @@ export default function Home() {
                   y2="9.92943"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#FFD43B" />
-                  <stop offset="1" stop-color="#FFE873" />
+                  <stop stopColor="#FFD43B" />
+                  <stop offset="1" stopColor="#FFE873" />
                 </linearGradient>
               </defs>
             </svg>
@@ -311,7 +311,7 @@ export default function Home() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g clip-path="url(#clip0)">
+              <g clipPath="url(#clip0)">
                 <path
                   d="M5.33561 16.4998C6.04286 16.4998 6.72113 16.2189 7.22123 15.7188C7.72133 15.2187 8.00228 14.5404 8.00228 13.8332V11.1665H5.33561C4.62837 11.1665 3.95009 11.4475 3.44999 11.9476C2.9499 12.4476 2.66895 13.1259 2.66895 13.8332C2.66895 14.5404 2.9499 15.2187 3.44999 15.7188C3.95009 16.2189 4.62837 16.4998 5.33561 16.4998Z"
                   fill="#0ACF83"
@@ -373,8 +373,8 @@ export default function Home() {
                   y2="8.09601"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#5A9FD4" />
-                  <stop offset="1" stop-color="#306998" />
+                  <stop stopColor="#5A9FD4" />
+                  <stop offset="1" stopColor="#306998" />
                 </linearGradient>
                 <linearGradient
                   id="paint1_linear"
@@ -384,8 +384,8 @@ export default function Home() {
                   y2="9.92943"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#FFD43B" />
-                  <stop offset="1" stop-color="#FFE873" />
+                  <stop stopColor="#FFD43B" />
+                  <stop offset="1" stopColor="#FFE873" />
                 </linearGradient>
               </defs>
             </svg>
@@ -457,7 +457,13 @@ export default function Home() {
                 <p>
                   So check out some of the things I’m great at, what I’ve
                   achieved and what I’ve done. If you’re looking for some more
-                  casual achievements you can also take a look at my dashboard.
+                  casual achievements you can also{" "}
+                  <Link href="/dashboard">
+                    <a className="font-medium hover:px-2 hover:py-1 focus:px-2 focus:py-1 underline rounded-md hover:text-white focus:text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-all">
+                      take a look at my dashboard
+                    </a>
+                  </Link>
+                  .
                 </p>
               </div>
             </div>
@@ -465,35 +471,38 @@ export default function Home() {
         </div>
 
         <div className="divide-y divide-white divide-opacity-10 rounded-lg overflow-hidden">
-          <section className="py-6 hover:bg-white hover:bg-opacity-5 transition-colors">
-            <h3 className="font-semibold px-6 mb-4 text-white">Education</h3>
+          <section className="pt-6 pb-4 hover:bg-white hover:bg-opacity-5 transition-colors">
+            <h3 className="font-semibold px-6 mb-2 text-white">Education</h3>
             <Carousell
-              hideScrollbar={true}
+              mobileHideScrollbars={true}
               direction="x"
+              className="py-2"
               style={{ scrollPaddingInline: "1.5rem" }}
               alignX="start"
               type="mandatory"
               items={educationItems}
             />
           </section>
-          <section className="py-6 hover:bg-white hover:bg-opacity-5 transition-colors">
-            <h3 className="font-semibold px-6 mb-4 text-white">Experience</h3>
+          <section className="pt-6 pb-4 hover:bg-white hover:bg-opacity-5 transition-colors">
+            <h3 className="font-semibold px-6 mb-2 text-white">Experience</h3>
             <Carousell
-              hideScrollbar={true}
+              mobileHideScrollbars={true}
               direction="x"
+              className="py-2"
               style={{ scrollPaddingInline: "1.5rem" }}
               alignX="start"
               type="mandatory"
               items={experienceItems}
             />
           </section>
-          <section className="py-6 hover:bg-white hover:bg-opacity-5 transition-colors">
-            <h3 className="font-semibold px-6 mb-4 text-white">
+          <section className="pt-6 pb-4 hover:bg-white hover:bg-opacity-5 transition-colors">
+            <h3 className="font-semibold px-6 mb-2 text-white">
               Favorite Tools
             </h3>
             <Carousell
-              hideScrollbar={true}
+              mobileHideScrollbars={true}
               direction="x"
+              className="py-2"
               style={{ scrollPaddingInline: "1.5rem" }}
               alignX="start"
               type="mandatory"
@@ -507,16 +516,16 @@ export default function Home() {
         </section> */}
         <footer className="pt-16 pb-6">
           <div className="text-sm">
-            <div className="border-t mx-6 ml-6 border-white border-opacity-10 pt-8" />
+            <div className="border-t mx-6 ml-6 border-white border-opacity-10" />
             <Carousell
               direction="x"
               align="start"
-              type="mandatory"
-              className="mb-12"
-              style={{ scrollPadding: "0 1.5rem" }}
+              type="proximity"
+              className="mt-6 py-2 mb-8 ml-6"
+              style={{ scrollPadding: "0 0 0 1.5rem" }}
               items={
-                <CarousellItems className="pl-6 inline-flex items-center gap-4">
-                  <div className="inline-flex rounded-full overflow-hidden">
+                <CarousellItems className="inline-flex items-center gap-4 relative pr-6">
+                  <div className="inline-flex rounded-full overflow-hidden sticky left-0">
                     <Image
                       objectFit="cover"
                       src="/profile.jpg"
@@ -525,10 +534,16 @@ export default function Home() {
                       height={48}
                     />
                   </div>
-                  <a className="text-white font-medium" href="#">
+                  <a
+                    className="font-medium px-2 py-1 rounded-md hover:text-white focus:text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-colors"
+                    href="#"
+                  >
                     Github
                   </a>
-                  <a className="text-white font-medium" href="#">
+                  <a
+                    className="font-medium px-2 py-1 rounded-md hover:text-white focus:text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-colors"
+                    href="#"
+                  >
                     Twitter
                   </a>
                   <div className="flex items-center gap-2 whitespace-nowrap">
@@ -556,28 +571,28 @@ export default function Home() {
               <ul className="flex flex-col space-y-4">
                 <li>
                   <Link href="/">
-                    <a className="font-medium hover:text-white focus:text-white transition-colors">
+                    <a className="font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-md hover:text-white focus:text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-all">
                       Home
                     </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/projects">
-                    <a className="font-medium hover:text-white focus:text-white transition-colors">
+                    <a className="font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-md hover:text-white focus:text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-all">
                       Projects
                     </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/dashboard">
-                    <a className="font-medium hover:text-white focus:text-white transition-colors">
+                    <a className="font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-md hover:text-white focus:text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-all">
                       Dashboard
                     </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/digital_garden">
-                    <a className="font-medium hover:text-white focus:text-white transition-colors">
+                    <a className="font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-md hover:text-white focus:text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-all">
                       Digital Garden
                     </a>
                   </Link>
