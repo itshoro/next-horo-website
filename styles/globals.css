@@ -37,4 +37,14 @@ a {
   box-sizing: border-box;
 }
 
+@media (hover: none) {
+  .hideScrollbars::-webkit-scrollbar {
+    display: none;
+  }
+  .hideScrollbars {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
 @tailwind utilities;

@@ -2,18 +2,16 @@ import styles from "./index.module.css";
 import requiredIf from "react-required-if";
 import PropTypes from "prop-types";
 
-const CarousellItems = ({ children, className, useBumper = true, style }) => (
+const CarousellItems = ({ children, className, style }) => (
   <div style={style} className={className}>
     {children}
-    {useBumper && <div className="relative w-3" />}
   </div>
 );
 
-CarousellItems.PropTypes = {
+CarousellItems.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.string,
+  style: PropTypes.object,
   children: PropTypes.node,
-  useBumper: PropTypes.bool,
 };
 
 const Carousell = ({
@@ -84,7 +82,7 @@ const Carousell = ({
     <div
       className={[
         styles.viewArea,
-        mobileHideScrollbars && styles.hideScrollbars,
+        mobileHideScrollbars && "hideScrollbars",
         styles[direction],
         styles[type],
         resolveAlign(align),
@@ -102,12 +100,12 @@ const Carousell = ({
   );
 };
 
-Carousell.PropTypes = {
-  items: PropTypes.exact(CarousellItems).isRequired,
+Carousell.propTypes = {
+  items: PropTypes.node.isRequired,
+  mobileHideScrollbars: PropTypes.bool,
   className: PropTypes.string,
   direction: PropTypes.oneOf(["x", "y", "both"]).isRequired,
-  useBumper: PropTypes.bool,
-  style: PropTypes.string,
+  style: PropTypes.object,
   type: PropTypes.oneOf(["mandatory", "proximity"]).isRequired,
   dir: PropTypes.string,
   alignX: requiredIf(

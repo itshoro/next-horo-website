@@ -1,5 +1,5 @@
 .viewArea {
-  @apply relative overflow-auto w-full;
+  @apply relative overflow-auto;
 
   --scroll-direction: initial;
   --scroll-type: initial;
@@ -8,16 +8,6 @@
   --scroll-align-inline: start;
 
   scroll-snap-type: var(--scroll-direction) var(--scroll-type);
-}
-
-@media (hover: none) {
-  .viewArea.hideScrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .viewArea.hideScrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
 }
 
 .viewArea > div {
