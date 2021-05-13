@@ -66,13 +66,21 @@ const Carousell = ({
   const resolveAlign = (align, dir = null) => {
     switch (align) {
       case "start":
-        return styles[`scroll-align-${dir && dir + "-"}start`];
+        if (dir === "inline") return styles["scroll-align-inline-start"];
+        if (dir === "block") return styles["scroll-align-block-start"];
+        return styles["scroll-align-start"];
       case "center":
-        return styles[`scroll-align-${dir && dir + "-"}center`];
+        if (dir === "inline") return styles["scroll-align-inline-center"];
+        if (dir === "block") return styles["scroll-align-block-center"];
+        return styles["scroll-align-center"];
       case "end":
-        return styles[`scroll-align-${dir && dir + "-"}end`];
+        if (dir === "inline") return styles["scroll-align-inline-end"];
+        if (dir === "block") return styles["scroll-align-block-end"];
+        return styles["scroll-align-end"];
       case "none":
-        return styles[`scroll-align-${dir && dir + "-"}none`];
+        if (dir === "inline") return styles["scroll-align-inline-none"];
+        if (dir === "block") return styles["scroll-align-block-none"];
+        return styles["scroll-align-none"];
       default:
         return null;
     }
@@ -85,9 +93,9 @@ const Carousell = ({
         mobileHideScrollbars && "hideScrollbars",
         styles[direction],
         styles[type],
-        resolveAlign(align),
-        resolveAlign(alignX, "inline"),
-        resolveAlign(alignY, "block"),
+        align && resolveAlign(align),
+        alignX && resolveAlign(alignX, "inline"),
+        alignY && resolveAlign(alignY, "block"),
         className,
       ]
         .filter((x) => x)
