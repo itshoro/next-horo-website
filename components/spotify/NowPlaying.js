@@ -6,7 +6,7 @@ const NowPlaying = () => {
   const { data, error } = useSWR("/api/spotify/now_playing", fetcher);
 
   const { title, artists, songUrl, artistsUrl } =
-    error || !data
+    error || !data || !data.isPlaying
       ? {
           title: "Not Playing",
           artists: "Spotify",
