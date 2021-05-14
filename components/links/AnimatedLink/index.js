@@ -6,7 +6,7 @@ const AnimatedLink = ({ title, className, href, onClick, onMouseEnter }) => (
   <Link href={href} onClick={onClick} onMouseEnter={onMouseEnter}>
     <a
       className={[
-        "inline-flex items-center space-x-2 bg-clip-text text-transparent focus:pl-2 hover:pl-2 transition-all",
+        "inline-flex items-center space-x-2 bg-clip-text text-transparent group focus:pl-2 hover:pl-2 transition-all",
         className,
         styles.gradient,
       ]
@@ -58,12 +58,13 @@ const AnimatedLink = ({ title, className, href, onClick, onMouseEnter }) => (
               strokeWidth="4"
             />
             <text
-              className="mix-blend-difference"
+              // `mix-blend-mode` seems to break `backdrop-filter`, going to have to manually set new colors
+              className="text-ember group-focus:text-black group-hover:text-black transition-colors duration-75"
               x="50%"
               y="50%"
               textAnchor="middle"
               dominantBaseline="central"
-              fill="url(#b)"
+              fill="currentColor"
               fontSize="64"
             >
               &rarr;
