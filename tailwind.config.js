@@ -1,6 +1,6 @@
 module.exports = {
   mode: "jit",
-  purge: ["./pages/**/*.js", "./components/**/*.js"],
+  purge: ["./pages/**/*.{js,jsx}", "./components/**/*.{js,jsx}"],
   darkMode: "media", // or 'media' or 'class'
   theme: {
     extend: {
@@ -22,12 +22,12 @@ module.exports = {
             return `hsla(331deg,88%,46%,${opacityVariable})`;
           }
           return `hsl(331deg,88%,46%)`;
-        }
-      }
-    }
+        },
+      },
+    },
   },
   variants: {
-    extend: {}
+    extend: {},
   },
-  plugins: []
+  plugins: [],
 };
