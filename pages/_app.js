@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Navigation from "@/components/nav";
 import "../styles/globals.css";
 
@@ -5,7 +6,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <div className="relative">
       <Navigation />
-      <Component {...pageProps} />
+      <main className="min-h-screen flex flex-col">
+        <Component {...pageProps} />
+        <Footer />
+      </main>
     </div>
   );
 }
