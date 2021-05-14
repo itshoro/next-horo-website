@@ -2,7 +2,7 @@ import useSWR from "swr";
 
 import fetcher from "@/lib/fetcher";
 
-const NowPlaying = () => {
+const NowPlaying = ({ loading }) => {
   const { data, error } = useSWR("/api/spotify/now_playing", fetcher);
 
   const { title, artists, songUrl, artistsUrl } =
@@ -32,14 +32,28 @@ const NowPlaying = () => {
         </svg>
       </object>
       <a
-        className="font-medium text-white hover:px-2 hover:py-1 focus:px-2 focus:py-1 rounded-md  focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-all"
+        className={[
+          "font-medium text-white rounded-md transition-all",
+          !data || loading
+            ? "skeleton"
+            : "hover:px-2 hover:py-1 focus:px-2 focus:py-1 focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 ",
+        ]
+          .filter((x) => x)
+          .join(" ")}
         href={songUrl || ""}
       >
         {title}
       </a>
       &mdash;
       <a
-        className="hover:px-2 hover:py-1 focus:px-2 focus:py-1 rounded-md  focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-all"
+        className={[
+          "rounded-md transition-all",
+          !data || loading
+            ? "skeleton"
+            : "hover:px-2 hover:py-1 focus:px-2 focus:py-1 focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 ",
+        ]
+          .filter((x) => x)
+          .join(" ")}
         href={artistsUrl || ""}
       >
         {artists}

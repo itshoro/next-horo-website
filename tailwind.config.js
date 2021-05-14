@@ -24,6 +24,22 @@ module.exports = {
           return `hsl(331deg,88%,46%)`;
         },
       },
+      keyframes: {
+        skeleton: {
+          "0%": {
+            backgroundPosition: "0% 0%",
+          },
+          "50%": {
+            backgroundPosition: "200% 200%",
+          },
+          "100%": {
+            backgroundPosition: "400% 400%",
+          },
+        },
+      },
+      animation: {
+        skeleton: "skeleton 4s ease-in-out infinite",
+      },
     },
   },
   variants: {
