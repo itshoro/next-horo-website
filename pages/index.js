@@ -222,12 +222,12 @@ export default function Home() {
               height="16"
               viewBox="0 0 54 33"
             >
-              <g clip-path="url(#prefix__clip0)">
+              <g clipPath="url(#prefix__clip0)">
                 <path
                   fill="#06B6D4"
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 />
               </g>
               <defs>
@@ -298,9 +298,9 @@ export default function Home() {
               >
                 <path
                   fill="#fff"
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M181.53 254.25a15.93 15.93 0 0012.7-.49l52.71-25.36a16 16 0 009.06-14.42V42.02a16 16 0 00-9.06-14.42l-52.7-25.36a15.94 15.94 0 00-18.2 3.1L75.15 97.38 31.2 64.02a10.66 10.66 0 00-13.61.61L3.49 77.45a10.67 10.67 0 00-.01 15.78L41.59 128 3.48 162.77a10.67 10.67 0 000 15.78l14.1 12.82a10.66 10.66 0 0013.62.6l43.95-33.36 100.9 92.06c1.6 1.6 3.47 2.8 5.48 3.58zm10.5-184.36L115.49 128l76.56 58.12V69.89z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 />
               </mask>
               <g mask="url(#a)">
@@ -322,9 +322,9 @@ export default function Home() {
                 </g>
                 <path
                   fill="url(#paint0_linear)"
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M181.38 254.25a15.94 15.94 0 0012.7-.49l52.7-25.36a16 16 0 009.06-14.42V42.02a16 16 0 00-9.06-14.42l-52.7-25.36a15.94 15.94 0 00-18.19 3.1L75 97.38 31.04 64.02a10.66 10.66 0 00-13.61.61L3.33 77.45a10.67 10.67 0 000 15.78L41.42 128l-38.1 34.77a10.67 10.67 0 000 15.78l14.1 12.82a10.66 10.66 0 0013.61.6L75 158.62l100.9 92.06c1.6 1.6 3.47 2.8 5.49 3.58zm10.5-184.36L115.32 128l76.56 58.12V69.89z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                   opacity=".25"
                 />
               </g>
@@ -335,10 +335,10 @@ export default function Home() {
                   height="236.15"
                   x="-21.49"
                   y="40.52"
-                  color-interpolation-filters="sRGB"
+                  colorInterpolationFilters="sRGB"
                   filterUnits="userSpaceOnUse"
                 >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
                   <feColorMatrix
                     in="SourceAlpha"
                     values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -363,10 +363,10 @@ export default function Home() {
                   height="297.35"
                   x="154.67"
                   y="-20.67"
-                  color-interpolation-filters="sRGB"
+                  colorInterpolationFilters="sRGB"
                   filterUnits="userSpaceOnUse"
                 >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
                   <feColorMatrix
                     in="SourceAlpha"
                     values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -393,8 +393,8 @@ export default function Home() {
                   y2="255.34"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#fff" />
-                  <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                  <stop stopColor="#fff" />
+                  <stop offset="1" stopColor="#fff" stopOpacity="0" />
                 </linearGradient>
               </defs>
             </svg>
