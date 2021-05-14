@@ -1,7 +1,7 @@
 const Navigation = () => {
   return (
     <div className="fixed z-10 top-0 w-full backdrop-filter backdrop-blur bg-black bg-opacity-50">
-      <div className="py-6 px-2">
+      <div className="p-6">
         <object className="w-4 h-auto">
           <svg
             xmlns="http://www.w3.org/2000/svg"
