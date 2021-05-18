@@ -8,14 +8,14 @@ import NowPlaying from "@/components/spotify/NowPlaying";
 
 const EducationItem = ({ from, to, location, isJob, major, title }) => (
   <article className="whitespace-nowrap">
-    <div className="pb-4 space-y-2">
+    <div className="pb-6 space-y-2">
       <div className="text-xs text-[#4F4F4F]">
         {from} &ndash; {to} {!isJob && <>&middot; {major}</>}
       </div>
       <div className="text-white">{location}</div>
     </div>
     {title && (
-      <div className="inline-flex rounded-full -ml-3 py-1 px-3 bg-ember text-ember bg-opacity-10 text-xs items-center gap-1">
+      <div className="inline-flex rounded-lg py-1 px-3 select-none cursor-default text-[#b7b7b7] border border-white border-opacity-10 hover:bg-opacity-10 hover:border-transparent hover:bg-white hover:text-white transition-colors text-xs items-center gap-1">
         <object>
           {isJob ? (
             <svg
@@ -412,7 +412,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="relative px-4 pb-8">
+      <div className="relative px-4 pb-12">
         <section className="flex min-h-screen flex-col justify-center pt-[80px]">
           <div className="my-auto">
             <div className="mb-16 px-2">
@@ -424,7 +424,7 @@ export default function Home() {
                 .
               </h1>
             </div>
-            <div className="text-sm px-2 space-y-6">
+            <div className="text-sm leading-normal px-2 space-y-6">
               <div>
                 Based in Willich, Germany, I’m a computer science student in my
                 last year of university, who realizes dreams as reality.
@@ -451,11 +451,9 @@ export default function Home() {
               height={96}
             />
           </div>
-          <div>
-            <h2 className="font-bold text-lg text-white my-6">
-              A Quick Summary
-            </h2>
-            <div className="text-sm space-y-3">
+          <div className="text-white my-6">
+            <h2 className="text-2xl font-semibold mb-4">A Quick Summary</h2>
+            <div className="text-sm leading-normal space-y-3 text-[#b7b7b7]">
               <p>
                 Currently I’m threading the needle between being a
                 jack-of-all-trades and becoming an expert, who blends design
@@ -479,7 +477,9 @@ export default function Home() {
 
       <div className="divide-y divide-white divide-opacity-10 rounded-lg overflow-hidden">
         <section className="pt-6 pb-4 hover:bg-white hover:bg-opacity-5 transition-colors">
-          <h3 className="font-semibold px-6 mb-2 text-white">Education</h3>
+          <h3 className="font-semibold text-xl px-6 mb-2 text-white">
+            Education
+          </h3>
           <Carousell
             mobileHideScrollbars={true}
             direction="x"
@@ -491,7 +491,9 @@ export default function Home() {
           />
         </section>
         <section className="pt-6 pb-4 hover:bg-white hover:bg-opacity-5 transition-colors">
-          <h3 className="font-semibold px-6 mb-2 text-white">Experience</h3>
+          <h3 className="font-semibold text-xl px-6 mb-2 text-white">
+            Experience
+          </h3>
           <Carousell
             mobileHideScrollbars={true}
             direction="x"
@@ -503,7 +505,9 @@ export default function Home() {
           />
         </section>
         <section className="pt-6 pb-4 hover:bg-white hover:bg-opacity-5 transition-colors">
-          <h3 className="font-semibold px-6 mb-2 text-white">Favorite Tools</h3>
+          <h3 className="font-semibold text-xl px-6 mb-2 text-white">
+            Favorite Tools
+          </h3>
           <Carousell
             mobileHideScrollbars={true}
             direction="x"
