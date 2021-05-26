@@ -5,17 +5,17 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Footer = () => (
-  <footer className="pt-16 pb-6 mt-auto">
+  <footer className="pt-16 pb-6 m-auto w-full">
     <div className="text-sm">
-      <div className="border-t mx-6 ml-6 border-white border-opacity-10" />
+      <div className="border-t mx-6 ml-6  border-white border-opacity-10" />
       <Carousell
         direction="x"
         align="none"
         type="proximity"
-        className="mt-6 py-2 mb-8 ml-6"
+        className="mt-6 py-2 mb-8 ml-6 lg:mr-6 overflow-x-hidden"
         style={{ scrollPadding: "0 0 0 1.5rem" }}
         items={
-          <CarousellItems className="inline-flex items-center gap-4 relative pr-6">
+          <CarousellItems className="inline-flex items-center gap-4 relative pr-6 lg:pr-0 lg:mr-6">
             <div className="inline-flex rounded-full overflow-hidden sticky left-0">
               <Image
                 objectFit="cover"
