@@ -23,6 +23,7 @@ module.exports = {
           }
           return `hsl(331deg,88%,46%)`;
         },
+        offblack: "#1a1a1a",
       },
       keyframes: {
         skeleton: {
@@ -45,5 +46,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("tailwindcss-scroll-snap")],
 };

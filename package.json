@@ -14,7 +14,8 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-required-if": "^1.0.3",
-    "swr": "^0.5.6"
+    "swr": "^0.5.6",
+    "tailwindcss-scroll-snap": "^1.1.0"
   },
   "devDependencies": {
     "@ijsto/eslint-config": "3.0.2",
