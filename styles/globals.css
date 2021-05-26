@@ -37,6 +37,32 @@ a {
   box-sizing: border-box;
 }
 
+.animate-lines > path {
+  stroke-dasharray: 45;
+  animation: test 8s linear infinite;
+  stroke-width: 1px;
+}
+/* @media screen and (min-width: theme(screens.md)) { */
+.animate-lines > path:nth-child(even) {
+  --start: 0;
+  --stop: 180;
+  animation-direction: reverse;
+}
+
+.animate-lines > path:nth-child(odd) {
+  --start: 0;
+  --stop: 360;
+}
+
+@keyframes test {
+  from {
+    stroke-dashoffset: var(--start);
+  }
+  to {
+    stroke-dashoffset: var(--stop);
+  }
+}
+
 @media (hover: none) {
   .hideScrollbars::-webkit-scrollbar {
     display: none;
@@ -46,6 +72,7 @@ a {
     scrollbar-width: none;
   }
 }
+/* } */
 
 .skeleton {
   @apply animate-skeleton;
