@@ -2,15 +2,12 @@ import { InnerSection } from "@/components/containers/Section";
 import { TopTracks } from "@/components/spotify";
 import { AniListCard, GithubCard } from "@/components/stats/StatCard/";
 
+import { PageHeading } from "@/components/nodes";
+
 const Dashboard = () => (
   <>
     <InnerSection className="mt-24">
-      <h1
-        className="font-bold text-white text-4xl pb-2 mb-2"
-        style={{ lineHeight: "1.1" }}
-      >
-        Dashboard
-      </h1>
+      <PageHeading as="h1">Dashboard</PageHeading>
 
       <p>
         I’m tracking some interesting and sometimes just nerdy stats about
