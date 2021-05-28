@@ -1,4 +1,4 @@
-import { getNowPlaying } from "@/lib/spotify";
+import { getNowPlaying } from "@/lib/api/spotify";
 
 export default async (_, res) => {
   const data = await getNowPlaying();
