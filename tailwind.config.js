@@ -4,6 +4,9 @@ module.exports = {
   darkMode: "media", // or 'media' or 'class'
   theme: {
     extend: {
+      flex: {
+        expand: "0 1 100%",
+      },
       colors: {
         foxfire: ({ opacityVariable, opacityValue }) => {
           if (opacityValue !== undefined) {
