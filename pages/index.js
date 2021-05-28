@@ -7,15 +7,15 @@ import Link from "next/link";
 import { InnerSection, Section } from "@/components/containers/Section";
 
 const EducationItem = ({ from, to, location, isJob, major, title }) => (
-  <article className="whitespace-nowrap">
-    <div className="pb-6 lg:px-0 space-y-2">
+  <article className="whitespace-nowrap lg:w-full">
+    <div className="pb-6 lg:px-0 space-y-2 lg:flex lg:justify-between lg:pb-2">
       <div className="text-white font-bold">{location}</div>
       <div className="text-xs text-[#4F4F4F]">
         {from} &ndash; {to} {!isJob && <>&middot; {major}</>}
       </div>
     </div>
     {title && (
-      <div className="inline-flex rounded-lg py-1 px-3 select-none cursor-default text-[#b7b7b7] border border-white border-opacity-10 hover:bg-opacity-10 hover:border-transparent hover:bg-white hover:text-white transition-colors text-xs items-center gap-1">
+      <div className="inline-flex rounded-lg py-1 px-3 select-none cursor-default text-[#b7b7b7] border border-white border-opacity-10 hover:bg-opacity-10 hover:border-transparent hover:bg-white hover:text-white transition-colors text-xs items-center gap-1 lg:border-none lg:px-0 lg:hover:bg-transparent">
         <object>
           {isJob ? (
             <svg
@@ -49,7 +49,7 @@ const EducationItem = ({ from, to, location, isJob, major, title }) => (
 );
 
 const ExperienceWrapper = ({ children, title }) => (
-  <section className="hover:bg-white hover:bg-opacity-5 transition-colors">
+  <section className="hover:bg-white hover:bg-opacity-5 md:hover:bg-transparent transition-colors">
     <div className="pt-6 pb-4">
       <h3 className="text-[#b7b7b7] px-6 lg:px-0 sm:px-12 mb-2">{title}</h3>
       {children}
@@ -59,18 +59,18 @@ const ExperienceWrapper = ({ children, title }) => (
 
 export default function Home() {
   const educationItems = (
-    <CarousellItems className="space-x-12 px-6 lg:px-0 sm:px-12 lg:space-x-16">
+    <CarousellItems className="space-x-12 px-6 lg:px-0 sm:px-12 lg:space-x-0 lg:space-y-8 lg:flex-col lg:w-full">
       <EducationItem
-        from={2018}
-        to={2021}
+        from="Oct 2018"
+        to="Aug 2021"
         isJob={false}
         location="Hochschule Niederrhein"
         major="Computer Science"
         title="Bachelor of Science"
       />
       <EducationItem
-        from={2017}
-        to={2018}
+        from="Oct 2017"
+        to="Sep 2018"
         isJob={false}
         location="Heinrich Heine Universität"
         major="Computer Science"
@@ -79,17 +79,17 @@ export default function Home() {
   );
 
   const experienceItems = (
-    <CarousellItems className="space-x-12 px-6 lg:px-0 sm:px-12 lg:space-x-16">
+    <CarousellItems className="space-x-12 px-6 lg:px-0 sm:px-12 lg:space-x-0 lg:space-y-8 lg:flex-col lg:w-full">
       <EducationItem
-        from={2021}
-        to={2021}
+        from="Feb 2021"
+        to="May 2021"
         isJob={true}
         location="Limegreen IT"
         title="Intern / Web Developer"
       />
       <EducationItem
-        from={2020}
-        to={2020}
+        from="Jan 2019"
+        to="Feb 2019"
         isJob={true}
         location="eEvolution GmbH"
         title="Student Job / .NET Developer"
@@ -98,7 +98,7 @@ export default function Home() {
   );
 
   const toolItems = (
-    <CarousellItems className="space-x-12 px-6 lg:px-0 sm:px-12 lg:space-x-16 inline-flex">
+    <CarousellItems className="space-x-12 px-6 lg:px-0 sm:px-12 lg:flex-wrap">
       <div className="flex flex-col flex-auto whitespace-nowrap pt-6 gap-4 text-white text-sm">
         <div className="flex gap-1">
           <object>
@@ -439,7 +439,7 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className="text-sm md:text-base leading-normal px-2 space-y-6 sm:max-w-prose">
+        <div className="text-sm md:text-base leading-normal px-2 space-y-6">
           <div className="max-w-[450px]">
             Based in Willich, Germany, I’m a computer science student in my last
             year of university. Venturing out to learn as much as I can.
@@ -606,7 +606,7 @@ export default function Home() {
             height={128}
           />
         </div>
-        <div className="text-sm  text-[#b7b7b7] space-y-3 my-6 sm:max-w-prose">
+        <div className="text-sm  text-[#b7b7b7] space-y-3 my-6">
           <p className="text-xl text-white leading-relaxed mb-8">
             Currently I’m threading the needle between being a
             jack-of-all-trades and becoming an expert, who blends design
@@ -627,7 +627,7 @@ export default function Home() {
       </InnerSection>
 
       <Section className="!px-0">
-        <div className="w-full divide-y divide-offblack rounded-lg lg:rounded-none overflow-hidden max-w-[640px] mx-auto">
+        <div className="w-full divide-y divide-offblack rounded-lg lg:rounded-none overflow-hidden max-w-[720px] mx-auto">
           <ExperienceWrapper title="Education">
             <Carousell
               direction="x"

@@ -1,6 +1,8 @@
+const sectionPaddingX = "px-6 sm:px-12";
+
 const Section = ({ children, className, style }) => (
   <section
-    className={["w-full px-4 sm:px-12 max-w-[1024px] mx-auto", className]
+    className={["w-full max-w-[1260px] mx-auto", className, sectionPaddingX]
       .filter((x) => x)
       .join(" ")}
     style={style}
@@ -12,7 +14,7 @@ const Section = ({ children, className, style }) => (
 const InnerSection = ({ children, className, style }) => (
   <Section>
     <div
-      className={["max-w-[640px] mx-auto", className]
+      className={["max-w-[720px] mx-auto", className]
         .filter((x) => x)
         .join(" ")}
       style={style}
@@ -22,4 +24,4 @@ const InnerSection = ({ children, className, style }) => (
   </Section>
 );
 
-export { Section, InnerSection };
+export { Section, InnerSection, sectionPaddingX };
