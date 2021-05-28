@@ -630,7 +630,6 @@ export default function Home() {
         <div className="w-full divide-y divide-offblack rounded-lg lg:rounded-none overflow-hidden max-w-[640px] mx-auto">
           <ExperienceWrapper title="Education">
             <Carousell
-              mobileHideScrollbars={true}
               direction="x"
               className="py-2 snap-px-6 md:snap-px-12 lg:snap-px-0"
               align="start"
@@ -640,7 +639,6 @@ export default function Home() {
           </ExperienceWrapper>
           <ExperienceWrapper title="Experience">
             <Carousell
-              mobileHideScrollbars={true}
               direction="x"
               className="py-2 snap-px-6 md:snap-px-12 lg:snap-px-0"
               align="start"
@@ -650,7 +648,6 @@ export default function Home() {
           </ExperienceWrapper>
           <ExperienceWrapper title="Favorite Tools">
             <Carousell
-              mobileHideScrollbars={true}
               direction="x"
               className="py-2 snap-px-6 md:snap-px-12 lg:snap-px-0"
               align="start"

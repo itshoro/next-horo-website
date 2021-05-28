@@ -12,7 +12,6 @@ const Footer = () => (
         direction="x"
         align="none"
         type="proximity"
-        mobileHideScrollbars={false}
         className="mt-6 py-2 mb-8 ml-6 lg:mr-6"
         style={{ scrollPadding: "0 0 0 1.5rem" }}
         items={
