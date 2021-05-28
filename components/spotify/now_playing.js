@@ -1,5 +1,4 @@
 import useSWR from "swr";
-
 import fetcher from "@/lib/fetcher";
 
 const NowPlaying = ({ loading }) => {
@@ -16,7 +15,7 @@ const NowPlaying = ({ loading }) => {
       : data;
 
   return (
-    <div className="flex items-center gap-2 whitespace-nowrap md:max-w-[635px]">
+    <div className="flex items-center gap-2 min-w-0">
       <object>
         <svg
           width="24"
@@ -33,7 +32,7 @@ const NowPlaying = ({ loading }) => {
       </object>
       <a
         className={[
-          "font-medium text-white rounded-md transition-all",
+          "font-medium flex-shrink-0 text-white rounded-md transition-all",
           !data || loading
             ? "skeleton"
             : "hover:px-2 hover:py-1 focus:px-2 focus:py-1 focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 ",
@@ -50,7 +49,7 @@ const NowPlaying = ({ loading }) => {
           "rounded-md transition-all",
           !data || loading
             ? "skeleton"
-            : "hover:px-2 hover:py-1 focus:px-2 focus:py-1 focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 md:flex-shrink md:truncate",
+            : "hover:px-2 hover:py-1 focus:px-2 focus:py-1 focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 md:flex-shrink truncate",
         ]
           .filter((x) => x)
           .join(" ")}

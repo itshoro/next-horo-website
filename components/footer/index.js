@@ -12,7 +12,8 @@ const Footer = () => (
         direction="x"
         align="none"
         type="proximity"
-        className="mt-6 py-2 mb-8 ml-6 lg:mr-6 overflow-x-hidden"
+        mobileHideScrollbars={false}
+        className="mt-6 py-2 mb-8 ml-6 lg:mr-6"
         style={{ scrollPadding: "0 0 0 1.5rem" }}
         items={
           <CarousellItems className="inline-flex items-center gap-4 relative pr-6 lg:pr-0 lg:mr-6">
