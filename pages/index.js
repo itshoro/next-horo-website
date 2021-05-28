@@ -599,7 +599,6 @@ export default function Home() {
         <div className="flex md:flex-row rounded-full overflow-hidden">
           <Image
             layout="fixed"
-            className="transform hover:scale-110 duration-1000 ease-out"
             objectFit="cover"
             src="/profile.jpg"
             quality={100}
