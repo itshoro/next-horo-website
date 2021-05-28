@@ -25,6 +25,8 @@ const NavLinks = ({ links, expandedMenu }) => (
   <ul
     className={[
       "flex flex-col items-start mx-auto md:flex-row md:mx-intial md:space-x-4 md:justify-end",
+      !expandedMenu && "h-0",
+      "md:h-auto",
       sectionPaddingX,
     ]
       .filter((x) => x)
@@ -77,8 +79,9 @@ const Navigation = ({ links }) => {
 
         <div
           className={[
-            "py-3 md:py-0 border-t md:border-none transition-colors",
-            expandedMenu ? "border-offblack" : "border-transparent",
+            "md:py-0 border-t md:border-none transition-colors",
+            expandedMenu ? "border-offblack py-3" : "border-transparent h-0",
+            "md:h-auto",
           ]
             .filter((x) => x)
             .join(" ")}
