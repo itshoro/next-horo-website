@@ -1,4 +1,5 @@
 const sectionPaddingX = "px-6 sm:px-12";
+const sectionMarginX = "mx-6 sm:mx-12";
 
 const Section = ({ children, className, style }) => (
   <section
@@ -24,4 +25,4 @@ const InnerSection = ({ children, className, style }) => (
   </Section>
 );
 
-export { Section, InnerSection, sectionPaddingX };
+export { Section, InnerSection, sectionPaddingX, sectionMarginX };
