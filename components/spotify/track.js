@@ -39,7 +39,7 @@ const Track = ({
           <a href={songUrl}>{title}</a>
         </div>
         <div
-          className={[loading ? "skeleton rounded" : "truncate"]
+          className={[loading ? "skeleton rounded" : "truncate text-sm"]
             .filter((x) => x)
             .join(" ")}
         >
