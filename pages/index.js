@@ -272,7 +272,7 @@ export default function Home() {
           git
         </div>
         <div className="flex gap-1">
-          <object className="text-black dark:text-white">
+          <object className="text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -441,8 +441,9 @@ export default function Home() {
 
         <div className="text-sm md:text-base leading-normal px-2 space-y-6">
           <div className="max-w-[450px]">
-            Based in Willich, Germany, I’m a computer science student in my last
-            year of university. Venturing out to learn as much as I can.
+            I’m a computer science student in my last year of university, based
+            in Willich, Germany. Venturing out to learn as much as I can to
+            nuture this passion of mine.
           </div>
 
           <div>
@@ -457,7 +458,6 @@ export default function Home() {
 
       <div className="w-full h-96 z-[-1]">
         <div className="relative h-full">
-          {/* <div className="absolute z-10 bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black" /> */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="transparent"
