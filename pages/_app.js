@@ -1,5 +1,6 @@
 import Footer from "@/components/footer";
-import Navigation from "@/components/nav";
+import Logo from "@/components/logo";
+import { Navigation } from "@itshoro/miuri-components";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
@@ -7,12 +8,18 @@ function MyApp({ Component, pageProps }) {
     { title: "Home", href: "/" },
     { title: "Projects", href: "/projects" },
     { title: "Dashboard", href: "/dashboard" },
-    { title: "Digital Garden", href: "/digital-graden" },
+    // { title: "Digital Garden", href: "/digital-graden" },
   ];
 
   return (
     <div className="relative">
-      <Navigation links={links} />
+      <Navigation
+        position="fixed"
+        className="px-6 sm:px-12 max-w-[1260px]"
+        links={links}
+      >
+        <Logo />
+      </Navigation>
       <main className="min-h-screen flex flex-col items-center mx-auto">
         <Component {...pageProps} />
         <Footer />

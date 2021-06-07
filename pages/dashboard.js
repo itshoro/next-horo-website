@@ -2,14 +2,16 @@ import { InnerSection } from "@/components/containers/Section";
 import { TopTracks } from "@/components/spotify";
 import { AniListCard, GithubCard } from "@/components/stats/StatCard/";
 
-import { PageHeading } from "@/components/nodes";
+import { Text } from "@itshoro/miuri-components";
 
 const Dashboard = () => (
   <>
     <InnerSection className="mt-24">
-      <PageHeading as="h1">Dashboard</PageHeading>
+      <Text color="foreground" className="text-4xl" weight="bold" as="h1">
+        Dashboard
+      </Text>
 
-      <p>
+      <Text as="p" color="secondary">
         I’m tracking some interesting and sometimes just nerdy stats about
         myself, this is realized through custom routes and is inspired by{" "}
         <a
@@ -19,7 +21,7 @@ const Dashboard = () => (
           Lee Robinson's dashboard
         </a>
         .
-      </p>
+      </Text>
     </InnerSection>
     <InnerSection className="py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -28,12 +30,15 @@ const Dashboard = () => (
       </div>
     </InnerSection>
     <InnerSection className="py-8 space-y-2">
-      <h2
-        className="font-bold text-white text-xl pb-2 mb-2"
+      <Text
+        as="h2"
+        weight="bold"
+        className="pb-2 mb-2 text-xl"
+        color="foreground"
         style={{ lineHeight: "1.1" }}
       >
         Favorite Songs of the Month
-      </h2>
+      </Text>
       <div className="space-y-2">
         <TopTracks />
       </div>

@@ -18,6 +18,15 @@
 @tailwind base;
 @tailwind components;
 
+:root {
+  --foreground: #fff;
+  --background: #000;
+  --skeleton_background: #111;
+  --skeleton_foreground: #3a3a3a;
+  --accent: #1a1a1a;
+  --secondary: #b4b4b4;
+}
+
 html,
 body {
   padding: 0;

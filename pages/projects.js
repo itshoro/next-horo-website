@@ -1,17 +1,19 @@
 import { AnimatedLink } from "@/components/links";
+import { Text } from "@itshoro/miuri-components";
 
 const { InnerSection } = require("@/components/containers/Section");
-const { PageHeading, ArticleHeading } = require("@/components/nodes");
 
 const ProjectItem = ({ title, description, tags, href }) => {
   return (
-    <article className="inline-block w-full border rounded-lg border-offblack p-6 text-sm">
-      <ArticleHeading className="pb-1 mb-1" as="h3">
+    <article className="inline-block w-full rounded-lg border border-accent p-6">
+      <Text as="h3" color="foreground" weight="semibold" className="pb-1 mb-1">
         {title}
-      </ArticleHeading>
-      <div className="mt-1 pt-2 pb-8">{description}</div>
+      </Text>
+      <Text as="div" color="secondary" className="mt-1 pt-2 pb-8">
+        {description}
+      </Text>
 
-      <ul className="flex space-x-2 text-sm p-3 mb-6 bg-offblack select-none rounded-lg">
+      <ul className="flex space-x-2 text-sm p-3 mb-6 bg-accent select-none rounded-lg">
         {tags.map((tag) => (
           <li className="px-3 py-1 rounded-full bg-black">{tag}</li>
         ))}
@@ -48,7 +50,9 @@ const Projects = () => {
   return (
     <>
       <InnerSection className="mt-24">
-        <PageHeading as="h2">Projects</PageHeading>
+        <Text color="foreground" weight="bold" className="text-4xl" as="h2">
+          Projects
+        </Text>
       </InnerSection>
       <InnerSection className="flex flex-col space-y-4 pt-8">
         {projects.map((project) => (

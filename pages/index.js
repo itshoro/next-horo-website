@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import Link from "next/link";
 import { InnerSection, Section } from "@/components/containers/Section";
+import { Text } from "@itshoro/miuri-components";
 
 const EducationItem = ({ from, to, location, isJob, major, title }) => (
   <article className="whitespace-nowrap lg:w-full">
@@ -423,28 +424,27 @@ export default function Home() {
 
       <Section className="flex flex-col w-full">
         <div className="relative pb-16 pt-[25vh]">
-          <h1
-            className="font-bold text-white text-6xl md:text-[96px]"
+          <Text
+            as="h1"
+            className="text-3xl md:text-6xl"
+            weight="bold"
+            color="foreground"
             style={{ lineHeight: "1.1" }}
           >
-            Ohayo, my <br />
-            name is <br />
-            <span
-              className="font-bold text-transparent bg-clip-text bg-gradient-to-br from-foxfire to-ember"
-              style={{ lineHeight: "1.1" }}
-            >
+            Ohayo, my <br className="hidden md:block" />
+            name is <br className="hidden md:block" />
+            <span className="whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-br from-foxfire to-ember">
               Tim Nelke
             </span>
             .
-          </h1>
+          </Text>
         </div>
 
-        <div className="text-sm md:text-base leading-normal px-2 space-y-6">
-          <div className="max-w-[450px]">
-            I’m a computer science student in my last year of university, based
-            in Willich, Germany. Venturing out to learn as much as I can to
-            nuture this passion of mine.
-          </div>
+        <div className="text-sm md:text-base leading-normal space-y-6">
+          <Text as="div" className="max-w-[55ch]">
+            Based in Willich, Germany, I’m a computer science student in my last
+            year of university. Venturing out to learn as much as I can.
+          </Text>
 
           <div>
             <AnimatedLink
@@ -606,13 +606,13 @@ export default function Home() {
             height={128}
           />
         </div>
-        <div className="text-sm  text-[#b7b7b7] space-y-3 my-6">
-          <p className="text-xl text-white leading-relaxed mb-8">
+        <div className="leading-relaxed space-y-3 my-6">
+          <Text as="h3" color="foreground" className="mb-8 text-lg">
             Currently I’m threading the needle between being a
             jack-of-all-trades and becoming an expert, who blends design
             knowledge and application development.
-          </p>
-          <p className="leading-relaxed sm:text-base">
+          </Text>
+          <Text as="p" color="secondary">
             So check out some of the things I’m great at, what I’ve achieved and
             what I’ve done. If you’re looking for some more casual achievements
             you can also{" "}
@@ -622,12 +622,12 @@ export default function Home() {
               </a>
             </Link>
             .
-          </p>
+          </Text>
         </div>
       </InnerSection>
 
       <Section className="!px-0">
-        <div className="w-full divide-y divide-offblack rounded-lg lg:rounded-none overflow-hidden max-w-[720px] mx-auto">
+        <div className="w-full divide-y divide-accent rounded-lg lg:rounded-none overflow-hidden max-w-[720px] mx-auto">
           <ExperienceWrapper title="Education">
             <Carousell
               direction="x"

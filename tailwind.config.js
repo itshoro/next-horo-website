@@ -1,8 +1,24 @@
 module.exports = {
   mode: "jit",
-  purge: ["./pages/**/*.{js,jsx}", "./components/**/*.{js,jsx}"],
+  purge: [
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./node_modules/@itshoro/miuri-components/**/*.{ts,tsx,js,jsx}",
+  ],
   darkMode: "media", // or 'media' or 'class'
   theme: {
+    fontSize: {
+      xs: "0.75rem",
+      sm: "0.875rem",
+      base: "1rem",
+      lg: "1.25rem",
+      xl: "1.5rem",
+      "2xl": "2rem",
+      "3xl": "2.5rem",
+      "4xl": "3rem",
+      "5xl": "4rem",
+      "6xl": "6rem",
+    },
     extend: {
       flex: {
         expand: "0 1 100%",
@@ -26,7 +42,12 @@ module.exports = {
           }
           return `hsl(331deg,88%,46%)`;
         },
-        offblack: "#1a1a1a",
+        foreground: "var(--foreground)",
+        background: "var(--background)",
+        skeleton_background: "var(--skeleton_background)",
+        skeleton_foreground: "var(--skeleton_foreground)",
+        accent: "var(--accent)",
+        secondary: "var(--secondary)",
       },
       keyframes: {
         skeleton: {
