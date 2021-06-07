@@ -40,13 +40,13 @@ const Footer = () => (
             </div>
             <a
               className="font-medium px-2 py-1 rounded-md hover:text-white focus:text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-colors"
-              href="#"
+              href="https://github.com/itshoro"
             >
               Github
             </a>
             <a
               className="font-medium px-2 py-1 rounded-md hover:text-white focus:text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-colors"
-              href="#"
+              href="https://twitter.com/horo_dev"
             >
               Twitter
             </a>
