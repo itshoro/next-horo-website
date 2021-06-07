@@ -167,8 +167,8 @@
 
 "@itshoro/miuri-components@^1.0.0":
   version "1.0.1"
-  resolved "https://npm.pkg.github.com/download/@itshoro/miuri-components/1.0.1/d8e37619ee6459eb737e1a6b91d04016c468d7ced8c7201e45199a466878952f#03c0a5f607dee7ac0268cea1f0bcfc9310828f90"
-  integrity sha512-JPj833zTOfbJRMhTuZvdJ1tkAHk3s2k86zEghcP1cVcVDKLcV2OUeb+jTfOkAB1ps1BWByjvJ0Ks44GL2yViHg==
+  resolved "https://npm.pkg.github.com/download/@itshoro/miuri-components/1.0.1/cd8304ee5c127b3ee407d1c0816cfc09b1b03b37976f5faa47fb8e7bb9811722#d2fb5eacc6be309ca35cc631d5ed158ae9d55829"
+  integrity sha512-6MtZiNQ1VPb9UzBGN6tUgt+2Qz2m99/fesffegxAW1KIpzas8d4AbusVdZP2q/8LcVEg2yFHJWaDYajrXjEkPw==
 
 "@next/env@10.2.0":
   version "10.2.0"
