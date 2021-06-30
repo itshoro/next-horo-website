@@ -25,9 +25,10 @@ const TopTracks = ({ loading = false }) => {
 
   return (
     <>
-      {tracks.map((track) => (
-        <Track {...track} />
-      ))}
+      {tracks.map((track) => {
+        const img = (track.images && track.images[2]?.url) || "";
+        return <Track {...track} imageSrc={img} />;
+      })}
     </>
   );
 };

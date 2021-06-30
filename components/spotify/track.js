@@ -1,54 +1,59 @@
-import { Text } from "@itshoro/miuri-components";
+import { Text } from "@/components/text";
+import { Entity, EntityField, EntityThumbnail } from "@/components/entity";
 import Image from "next/image";
 
 const Track = ({
   artists,
   artistsUrl,
-  images,
+  imageSrc,
   songUrl,
   title,
   loading = false,
-}) => (
-  <article className="border border-accent rounded-lg p-4">
-    <div className="flex items-center">
-      {!loading && (
-        <Image
-          className={[
-            loading && "skeleton w-16 h-16",
-            "flex-shrink-0 rounded-lg overflow-hidden",
-          ]
-            .filter((x) => x)
-            .join(" ")}
-          layout="fixed"
-          width={64}
-          height={64}
-          src={images[2].url}
+}) => {
+  return (
+    <article className="border border-accent rounded-lg p-4">
+      <Entity
+        className="items-center space-x-4"
+        thumbnail={
+          <EntityThumbnail className="w-16 h-16" loading={loading}>
+            {!loading && (
+              <Image
+                className="flex-shrink-0 rounded-lg overflow-hidden"
+                layout="fixed"
+                width={64}
+                height={64}
+                src={imageSrc}
+              />
+            )}
+          </EntityThumbnail>
+        }
+      >
+        <EntityField
+          loading={loading}
+          title={
+            <Text
+              color={loading ? "transparent" : "foreground"}
+              weight="bold"
+              as="div"
+              truncate={true}
+            >
+              <a href={songUrl}>{title}</a>
+            </Text>
+          }
+          description={
+            <Text
+              color={loading ? "transparent" : "secondary"}
+              as="div"
+              className="text-sm"
+              truncate={true}
+            >
+              <a href={artistsUrl}>{artists}</a>
+            </Text>
+          }
         />
-      )}
-      <div className="pl-4 flex-1 min-w-0">
-        <Text
-          as="div"
-          truncate={true}
-          className={[
-            loading ? "skeleton rounded mb-2" : "text-white font-bold",
-          ]
-            .filter((x) => x)
-            .join(" ")}
-        >
-          <a href={songUrl}>{title}</a>
-        </Text>
-        <Text
-          as="div"
-          truncate={true}
-          className={[loading ? "skeleton rounded" : "truncate text-sm"]
-            .filter((x) => x)
-            .join(" ")}
-        >
-          <a href={artistsUrl}>{artists}</a>
-        </Text>
-      </div>
-    </div>
-  </article>
-);
+      </Entity>
+    </article>
+  );
+};
 
 export default Track;
