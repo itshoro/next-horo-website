@@ -2,7 +2,7 @@ import { InnerSection } from "@/components/containers/Section";
 import { TopTracks } from "@/components/spotify";
 import { AniListCard, GithubCard } from "@/components/stats/StatCard/";
 
-import { Text } from "@itshoro/miuri-components";
+import { Text } from "@/components/text";
 
 const Dashboard = () => (
   <>
