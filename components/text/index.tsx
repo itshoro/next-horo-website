@@ -24,6 +24,7 @@ const colorToTailwindClass = {
   background: "text-background",
   skeleton_background: "text-skeleton_background",
   skeleton_foreground: "text-skeleton_foreground",
+  transparent: "text-transparent",
   accent: "text-accent",
   secondary: "text-secondary",
 };
@@ -84,6 +85,7 @@ type TextArgs = {
     | "skeleton_background"
     | "skeleton_foreground"
     | "accent"
+    | "transparent"
     | "secondary";
   className?: string;
   // size?: 12 | 14 | 16 | 20 | 24 | 32 | 40 | 48 | 64 | 96;
@@ -102,4 +104,4 @@ type TextArgs = {
     | "black";
 };
 
-export { Text, TextArgs };
+export { Text };
