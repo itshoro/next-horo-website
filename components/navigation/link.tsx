@@ -23,9 +23,9 @@ const Link = ({ href, children }: LinkArgs) => {
   );
 };
 
-type LinkArgs = {
+export type LinkArgs = {
   href: string;
   children: ReactNode;
 };
 
-export { Link, LinkArgs };
+export { Link };

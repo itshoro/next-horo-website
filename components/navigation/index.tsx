@@ -1,4 +1,4 @@
-import React, {
+import {
   ReactNode,
   useEffect,
   useReducer,
@@ -7,7 +7,7 @@ import React, {
   createRef,
 } from "react";
 import { useRouter } from "next/router";
-import { Button } from "../button/index";
+import { Button } from "../button";
 import { Link } from "./link";
 import { useWindowEvent } from "../hooks/useWindowEvent";
 
@@ -367,4 +367,4 @@ type NavLinkArgs = {
   href: string;
 };
 
-export { Navigation, NavigationArgs, NavLinkArgs };
+export { Navigation };
