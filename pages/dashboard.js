@@ -3,6 +3,7 @@ import { TopTracks } from "@/components/spotify";
 import { AniListCard, GithubCard } from "@/components/stats/StatCard/";
 
 import { Text } from "@/components/text";
+import { Link } from "@/components/link";
 
 const Dashboard = () => (
   <>
@@ -14,12 +15,7 @@ const Dashboard = () => (
       <Text as="p" color="secondary">
         I’m tracking some interesting and sometimes just nerdy stats about
         myself, this is realized through custom routes and is inspired by{" "}
-        <a
-          href="https://leerob.io/dashboard"
-          className="font-medium hover:px-2 hover:py-1 focus:px-2 focus:py-1 underline rounded-md text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-all"
-        >
-          Lee Robinson's dashboard
-        </a>
+        <Link href="https://leerob.io/dashboard">Lee Robinson's dashboard</Link>
         .
       </Text>
     </InnerSection>

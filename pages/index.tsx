@@ -3,7 +3,7 @@ import { Carousell, CarousellItems } from "@/components/containers";
 import Head from "next/head";
 import Image from "next/image";
 
-import Link from "next/link";
+import { Link } from "@/components/link";
 import { InnerSection, Section } from "@/components/containers/Section";
 import { Text } from "@/components/text";
 import { ReactNode } from "react";
@@ -637,10 +637,8 @@ export default function Home() {
             So check out some of the things I’m great at, what I’ve achieved and
             what I’ve done. If you’re looking for some more casual achievements
             you can also{" "}
-            <Link href="/dashboard">
-              <a className="font-medium hover:px-2 hover:py-1 focus:px-2 focus:py-1 underline rounded-md text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-all">
-                take a look at my dashboard
-              </a>
+            <Link external={true} href="/dashboard">
+              take a look at my dashboard
             </Link>
             .
           </Text>
