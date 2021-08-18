@@ -1,7 +1,7 @@
 import Footer from "@/components/footer";
 import Logo from "@/components/logo";
 import { Navigation } from "@/components/navigation";
-import { AppProps } from "next/dist/next-server/lib/router/router";
+import { AppProps } from "next/app";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
