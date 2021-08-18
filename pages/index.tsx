@@ -3,11 +3,26 @@ import { Carousell, CarousellItems } from "@/components/containers";
 import Head from "next/head";
 import Image from "next/image";
 
-import Link from "next/link";
+import { Link } from "@/components/link";
 import { InnerSection, Section } from "@/components/containers/Section";
-import { Text } from "@itshoro/miuri-components";
+import { Text } from "@/components/text";
+import { ReactNode } from "react";
 
-const EducationItem = ({ from, to, location, isJob, major, title }) => (
+const EducationItem = ({
+  from,
+  to,
+  location,
+  isJob,
+  major,
+  title,
+}: {
+  from?: number | string;
+  to?: number | string;
+  location?: string;
+  isJob?: boolean;
+  major?: string;
+  title?: string;
+}) => (
   <article className="whitespace-nowrap lg:w-full">
     <div className="pb-6 lg:px-0 space-y-2 lg:flex lg:justify-between lg:pb-2">
       <div className="text-white font-bold">{location}</div>
@@ -49,7 +64,13 @@ const EducationItem = ({ from, to, location, isJob, major, title }) => (
   </article>
 );
 
-const ExperienceWrapper = ({ children, title }) => (
+const ExperienceWrapper = ({
+  children,
+  title,
+}: {
+  children: ReactNode;
+  title: string;
+}) => (
   <section className="hover:bg-white hover:bg-opacity-5 md:hover:bg-transparent transition-colors">
     <div className="pt-6 pb-4">
       <h3 className="text-[#b7b7b7] px-6 lg:px-0 sm:px-12 mb-2">{title}</h3>
@@ -616,10 +637,8 @@ export default function Home() {
             So check out some of the things I’m great at, what I’ve achieved and
             what I’ve done. If you’re looking for some more casual achievements
             you can also{" "}
-            <Link href="/dashboard">
-              <a className="font-medium hover:px-2 hover:py-1 focus:px-2 focus:py-1 underline rounded-md text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-all">
-                take a look at my dashboard
-              </a>
+            <Link external={true} href="/dashboard">
+              take a look at my dashboard
             </Link>
             .
           </Text>

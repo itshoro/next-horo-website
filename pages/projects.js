@@ -1,5 +1,4 @@
-import { AnimatedLink } from "@/components/links";
-import { Text } from "@itshoro/miuri-components";
+import { Text } from "@/components/text";
 
 const { InnerSection } = require("@/components/containers/Section");
 

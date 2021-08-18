@@ -1,9 +1,10 @@
 import Footer from "@/components/footer";
 import Logo from "@/components/logo";
-import { Navigation } from "@itshoro/miuri-components";
+import { Navigation } from "@/components/navigation";
+import { AppProps } from "next/app";
 import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   const links = [
     { title: "Home", href: "/" },
     { title: "Projects", href: "/projects" },
