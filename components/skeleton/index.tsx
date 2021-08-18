@@ -1,12 +1,18 @@
 import { ReactNode } from "react";
 
-const Skeleton = ({ children, className, show = true }: SkeletonArgs) => {
+const Skeleton = ({
+  children,
+  className,
+  inline = false,
+  show = true,
+}: SkeletonArgs) => {
   if (children && !show) return <>{children}</>;
 
   return (
     <span
       className={[
-        "skeleton w-full h-full rounded inline-flex select-none",
+        "skeleton w-full rounded inline-flex select-none",
+        inline ? "h-auto" : "h-full",
         className,
       ]
         .filter((x) => x)
@@ -20,6 +26,7 @@ const Skeleton = ({ children, className, show = true }: SkeletonArgs) => {
 type SkeletonArgs = {
   children?: ReactNode;
   className?: string;
+  inline?: boolean;
   show?: boolean;
 };
 
