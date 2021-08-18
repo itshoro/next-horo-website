@@ -110,10 +110,13 @@ const Navigation = ({
   }, [navState.focusedItem]);
 
   useWindowEvent("resize", (event) => {
-    if (
-      navState.menuState === MenuState.Open &&
-      matchMedia("(min-width: 640px)")
-    ) {
+    if (matchMedia("(min-width: 640px)")) {
+      dispatch({ type: ActionType.CloseMenu });
+    }
+  });
+
+  useWindowEvent("keypress", (event) => {
+    if (event.key === "ESC") {
       dispatch({ type: ActionType.CloseMenu });
     }
   });
