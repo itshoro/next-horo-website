@@ -47,10 +47,22 @@ a {
 }
 
 .animate-lines > path {
-  stroke-dasharray: 45;
-  animation: test 8s linear infinite;
+  --steps: 45;
+  stroke-dasharray: var(--steps);
   stroke-width: 1px;
 }
+
+@media screen and (max-resolution: 1.5dppx) {
+  .animate-lines > path {
+    animation: test 32s linear infinite;
+  }
+}
+@media screen and (min-resolution: 1.5dppx) {
+  .animate-lines > path {
+    --steps: 1;
+  }
+}
+
 .animate-lines > path:nth-child(even) {
   --start: 0;
   --stop: 180;
