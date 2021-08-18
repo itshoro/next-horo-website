@@ -26,8 +26,8 @@ const Link = ({
 };
 
 type LinkArgs = {
-  external: boolean;
-  underline: boolean;
+  external?: boolean;
+  underline?: boolean;
   href: string;
   children: ReactNode;
 };
