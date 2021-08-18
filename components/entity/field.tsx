@@ -1,13 +1,9 @@
 import { ReactNode } from "react";
 import { Skeleton } from "../skeleton";
 import { Text } from "../text";
+import { useEntityContext } from ".";
 
-const EntityField = ({
-  title,
-  description,
-  align,
-  loading = false,
-}: EntityFieldArgs) => {
+const EntityField = ({ title, description, align }: EntityFieldArgs) => {
   const alignClass =
     align &&
     {
@@ -15,6 +11,11 @@ const EntityField = ({
       center: "items-center text-center",
       right: "items-end text-right",
     }[align];
+
+  let context = useEntityContext(
+    [EntityField.name, title].filter((x) => x).join(".")
+  );
+  const { loading } = context;
 
   return (
     <div
@@ -26,8 +27,26 @@ const EntityField = ({
         .filter((x) => x)
         .join(" ")}
     >
-      <Skeleton show={loading}>{title}</Skeleton>
-      <Skeleton show={loading}>{description}</Skeleton>
+      <Skeleton show={loading}>
+        <Text
+          color={loading ? "transparent" : "foreground"}
+          weight="bold"
+          as="div"
+          truncate={true}
+        >
+          {title}
+        </Text>
+      </Skeleton>
+      <Skeleton show={loading}>
+        <Text
+          color={loading ? "transparent" : "secondary"}
+          as="div"
+          className="text-sm"
+          truncate={true}
+        >
+          {description}
+        </Text>
+      </Skeleton>
     </div>
   );
 };
