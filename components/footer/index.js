@@ -12,7 +12,7 @@ const Footer = () => (
   <footer className="pt-16 pb-6 m-auto w-full max-w-[1260px]">
     <div className="text-sm">
       <div
-        className={["border-t  border-white border-opacity-10", sectionMarginX]
+        className={["border-t border-white border-opacity-10", sectionMarginX]
           .filter((x) => x)
           .join(" ")}
       />
