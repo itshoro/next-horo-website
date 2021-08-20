@@ -59,7 +59,7 @@ a {
 }
 @media screen and (min-resolution: 1.5dppx) {
   .animate-lines > path {
-    --steps: 1;
+    --steps: none;
   }
 }
 
