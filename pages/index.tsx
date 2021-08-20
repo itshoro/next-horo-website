@@ -646,7 +646,7 @@ export default function Home() {
       </InnerSection>
 
       <Section className="!px-0">
-        <div className="w-full divide-y divide-accent rounded-lg lg:rounded-none overflow-hidden max-w-[720px] mx-auto">
+        <div className="w-full divide-y divide-accent rounded-lg lg:rounded-none max-w-[720px] mx-auto">
           <ExperienceWrapper title="Education">
             <Carousell
               direction="x"
