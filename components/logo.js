@@ -2,12 +2,11 @@ import Link from "next/link";
 
 const Logo = () => (
   <Link href="/">
-    <a>
+    <a className="block p-1 rounded hover:bg-white/[.15] focus:bg-white/[.15]">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
-        width={24}
-        height={24}
+        className="w-6 h-6"
         viewBox="0 0 16 25"
       >
         <g clipPath="url(#clip0)">

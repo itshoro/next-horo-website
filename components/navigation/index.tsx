@@ -233,7 +233,7 @@ const Navigation = ({
         "w-full md:h-12 z-10 bg-black text-white duration-500 ease-in-out backdrop-filter backdrop-blur-lg backdrop-saturate-150",
         navState.menuState === MenuState.Open
           ? "h-screen bg-opacity-100"
-          : "h-12 bg-opacity-40",
+          : "h-auto bg-opacity-40",
         position,
       ]
         .filter((x) => x)
@@ -250,10 +250,10 @@ const Navigation = ({
           .join(" ")}
       >
         <div className="flex items-center justify-between py-3">
-          <div className="w-4 h-auto z-50">{children}</div>
+          <div className="h-auto z-50">{children}</div>
           <Button
             ref={navState.buttonRef}
-            className="rounded md:hidden hover:bg-white hover:bg-opacity-20"
+            className="rounded md:hidden p-1 bg-white bg-opacity-10 hover:bg-opacity-[.15] focus:bg-opacity-[.15]"
             onClick={() => {
               if (navState.menuState === MenuState.Open) {
                 dispatch({ type: ActionType.CloseMenu });
@@ -272,7 +272,7 @@ const Navigation = ({
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <g strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}>
+              <g strokeLinecap="round" strokeLinejoin="round" strokeWidth={1}>
                 <path
                   d="M4 6h16M4"
                   className={[
@@ -287,7 +287,7 @@ const Navigation = ({
                   d="M4 12h16M4"
                   className={[
                     navState.menuState === MenuState.Open && "opacity-0",
-                    "transition-opacity duration-500",
+                    "transition-opacity duration-400",
                   ]
                     .filter((x) => x)
                     .join(" ")}
