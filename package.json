@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "date-and-time": "^2.0.0",
     "dotenv": "^10.0.0",
     "next": "11.1.0",
     "preact": "^10.5.13",
