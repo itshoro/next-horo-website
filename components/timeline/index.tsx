@@ -1,4 +1,4 @@
-import { Carousell, CarousellItems } from "../containers";
+import { Carousell } from "../containers";
 import date from "date-and-time";
 
 const Timeline = ({
@@ -6,41 +6,31 @@ const Timeline = ({
 }: {
   areas: { title: string; entries: TimelineAreaEntryArgs[] }[];
 }) => {
-  const caroussels = areas.map(({ title, entries }) => {
-    return [title, <TimelineArea entries={entries} />];
-  });
-
   return (
     <>
-      {caroussels.map(([title, entries]) => {
+      {areas.map(({ title, entries }) => {
         return (
           <section className="hover:bg-white hover:bg-opacity-5 md:hover:bg-transparent transition-colors">
             <div className="pt-6 pb-4">
-              <h3 className="text-[#b7b7b7] px-6 lg:px-0 sm:px-12 mb-2">
+              <h3 className="text-secondary px-6 lg:px-0 sm:px-12 mb-2">
                 {title}
               </h3>
               <Carousell
-                direction="x"
+                scroll={{ direction: "x", type: "mandatory" }}
                 className="py-2 snap-px-6 sm:snap-px-12 lg:snap-px-0"
-                align="start"
-                type="mandatory"
-                items={entries}
-              />
+                align={{ x: "start" }}
+              >
+                <Carousell.Items className="space-x-12 px-6 lg:px-0 sm:px-12 lg:space-x-0 lg:space-y-8 lg:flex-col lg:w-full">
+                  {entries.map((entry_data) => {
+                    return <TimelineAreaEntry {...entry_data} />;
+                  })}
+                </Carousell.Items>
+              </Carousell>
             </div>
           </section>
         );
       })}
     </>
-  );
-};
-
-const TimelineArea = ({ entries }: { entries: TimelineAreaEntryArgs[] }) => {
-  return (
-    <CarousellItems className="space-x-12 px-6 lg:px-0 sm:px-12 lg:space-x-0 lg:space-y-8 lg:flex-col lg:w-full">
-      {entries.map((entry_data) => {
-        return <TimelineAreaEntry {...entry_data} />;
-      })}
-    </CarousellItems>
   );
 };
 
@@ -87,6 +77,16 @@ const TimelineAreaEntry = ({
 }: TimelineAreaEntryArgs) => {
   const descriptionIcon = ResolveIcon(type);
 
+  if (type === EntryType.TOOL) {
+    return (
+      <article className="flex flex-col flex-auto whitespace-nowrap pt-6 gap-4 text-white text-sm">
+        <div className="flex gap-1">
+          <div className="text-white font-bold">{description}</div>
+        </div>
+      </article>
+    );
+  }
+
   return (
     <article className="whitespace-nowrap lg:w-full">
       <div className="pb-6 lg:px-0 space-y-2 lg:flex lg:justify-between lg:pb-2">
@@ -99,7 +99,7 @@ const TimelineAreaEntry = ({
         </div>
       </div>
       {description && (
-        <div className="inline-flex rounded-lg py-1 px-3 select-none cursor-default text-[#b7b7b7] border border-white border-opacity-10 hover:bg-opacity-10 hover:border-transparent hover:bg-white hover:text-white transition-colors text-xs items-center gap-1 lg:border-none lg:px-0 lg:hover:bg-transparent">
+        <div className="inline-flex rounded-lg py-1 px-3 select-none cursor-default text-secondary border border-white border-opacity-10 hover:bg-opacity-10 hover:border-transparent hover:bg-white hover:text-white transition-colors text-xs items-center gap-1 lg:border-none lg:px-0 lg:hover:bg-transparent">
           {descriptionIcon}
           {description}
         </div>
@@ -111,6 +111,7 @@ const TimelineAreaEntry = ({
 enum EntryType {
   WORK = "WORK",
   EDUCATION = "EDUCATION",
+  TOOL = "TOOL",
 }
 
 type TimelineAreaEntryArgs = {
@@ -122,4 +123,4 @@ type TimelineAreaEntryArgs = {
   major?: string;
 };
 
-export { Timeline, TimelineArea, TimelineAreaEntry };
+export { Timeline };
