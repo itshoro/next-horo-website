@@ -47,5 +47,35 @@
         }
       ]
     }
+  ],
+  "tools": [
+    {
+      "iconType": "figma",
+      "description": "Figma"
+    },
+    {
+      "iconType": "python",
+      "description": "Python"
+    },
+    {
+      "iconType": "csharp",
+      "description": "C#"
+    },
+    {
+      "iconType": "tailwindcss",
+      "description": "Tailwind CSS"
+    },
+    {
+      "iconType": "git",
+      "description": "git"
+    },
+    {
+      "iconType": "nextjs",
+      "description": "Next.js"
+    },
+    {
+      "iconType": "vscode",
+      "description": "VS Code"
+    }
   ]
 }
