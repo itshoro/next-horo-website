@@ -4,7 +4,15 @@ import Image from "next/image";
 
 const { Section } = require("@/components/containers/Section");
 
-const ProjectItem = ({ title, description, tags, status, img, logo, href }) => {
+const ProjectItem = ({
+  title,
+  description,
+  tags,
+  status,
+  img,
+  logo,
+  href,
+}: ProjectItemArgs) => {
   return (
     <article className="w-full">
       <div className="relative h-96 rounded-lg overflow-hidden">
@@ -21,13 +29,13 @@ const ProjectItem = ({ title, description, tags, status, img, logo, href }) => {
             {title}
           </Text>
           <div className="bg-accent inline-block px-4 py-2 rounded-lg">
-            <Text as="div" color="foreground" className=" inline-block text-sm">
+            <Text as="div" color="foreground" className="inline-block text-sm">
               {status}
             </Text>
           </div>
         </div>
         <div>
-          <Text as="p" color="seconardy" weight="regular" className="pb-1 mb-1">
+          <Text as="p" color="secondary" weight="normal" className="pb-1 mb-1">
             {description}
           </Text>
         </div>
@@ -116,6 +124,16 @@ const Projects = () => {
       </Section>
     </>
   );
+};
+
+type ProjectItemArgs = {
+  title: string;
+  description: string;
+  tags: string[];
+  status: string;
+  img: string;
+  logo: string;
+  href: string;
 };
 
 export default Projects;
