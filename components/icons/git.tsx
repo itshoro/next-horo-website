@@ -1,12 +1,12 @@
-export const GitIcon = () => (
+export const GitIcon = ({ size = 16 }: { size?: number }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     id="Layer_1"
     x="0"
     y="0"
     version="1.1"
-    width="16"
-    height="16"
+    width={size}
+    height={size}
     xmlSpace="preserve"
     viewBox="0 0 97 97"
   >

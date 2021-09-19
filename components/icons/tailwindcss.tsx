@@ -1,9 +1,9 @@
-export const TailwindCSSIcon = () => (
+export const TailwindCSSIcon = ({ size = 16 }: { size?: number }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
-    width="16"
-    height="16"
+    width={size}
+    height={size}
     viewBox="0 0 54 33"
   >
     <g clipPath="url(#prefix__clip0)">

@@ -5,23 +5,32 @@ import { NextJSIcon } from "./nextjs";
 import { PythonIcon } from "./python";
 import { TailwindCSSIcon } from "./tailwindcss";
 import { VSCodeIcon } from "./vscode";
+import { GithubIcon } from "./github";
+import { TwitterIcon } from "./twitter";
+import { SpotifyIcon } from "./spotify";
 
-const Icon = ({ type }: IconArgs) => {
+const Icon = ({ type, size }: IconArgs) => {
   switch (type) {
     case IconType.CSharp:
-      return <CSharpIcon />;
+      return <CSharpIcon size={size} />;
     case IconType.Figma:
-      return <FigmaIcon />;
+      return <FigmaIcon size={size} />;
     case IconType.Git:
-      return <GitIcon />;
+      return <GitIcon size={size} />;
     case IconType.NextJS:
-      return <NextJSIcon />;
+      return <NextJSIcon size={size} />;
     case IconType.Python:
-      return <PythonIcon />;
+      return <PythonIcon size={size} />;
     case IconType.TailwindCSS:
-      return <TailwindCSSIcon />;
+      return <TailwindCSSIcon size={size} />;
     case IconType.VSCode:
-      return <VSCodeIcon />;
+      return <VSCodeIcon size={size} />;
+    case IconType.Github:
+      return <GithubIcon size={size} />;
+    case IconType.Twitter:
+      return <TwitterIcon size={size} />;
+    case IconType.Spotify:
+      return <SpotifyIcon size={size} />;
     default:
       return null;
   }
@@ -29,6 +38,7 @@ const Icon = ({ type }: IconArgs) => {
 
 type IconArgs = {
   type: IconType | string;
+  size?: number;
 };
 
 enum IconType {
@@ -39,6 +49,9 @@ enum IconType {
   Python = "python",
   TailwindCSS = "tailwindcss",
   VSCode = "vscode",
+  Github = "github",
+  Twitter = "twitter",
+  Spotify = "spotify",
 }
 
 export default Icon;

@@ -1,7 +1,7 @@
-export const PythonIcon = () => (
+export const PythonIcon = ({ size = 16 }: { size?: number }) => (
   <svg
-    width="16"
-    height="17"
+    width={size}
+    height={size + 1}
     viewBox="0 0 16 17"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
