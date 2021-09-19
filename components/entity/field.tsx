@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactElement } from "react";
 import { Skeleton } from "../skeleton";
 import { Text } from "../text";
 import { useEntityContext } from ".";
@@ -52,8 +52,8 @@ const EntityField = ({ title, description, align }: EntityFieldArgs) => {
 };
 
 export type EntityFieldArgs = {
-  title?: string;
-  description?: string;
+  title?: string | ReactElement;
+  description?: string | ReactElement;
   align?: "left" | "center" | "right";
   loading?: boolean;
 };

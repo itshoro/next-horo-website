@@ -1,10 +1,19 @@
 import styles from "./index.module.css";
 import Link from "next/link";
-import PropTypes from "prop-types";
+import { Url } from "url";
+import { MouseEventHandler } from "react";
 
-const AnimatedLink = ({ title, className, href, onClick, onMouseEnter }) => (
-  <Link href={href} onClick={onClick} onMouseEnter={onMouseEnter}>
+const AnimatedLink = ({
+  title,
+  className,
+  href,
+  onClick,
+  onMouseEnter,
+}: AnimatedLinkArgs) => (
+  <Link href={href}>
     <a
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
       className={[
         "inline-flex items-center space-x-2 bg-clip-text text-transparent group focus:pl-2 hover:pl-2 transition-all",
         className,
@@ -76,12 +85,12 @@ const AnimatedLink = ({ title, className, href, onClick, onMouseEnter }) => (
   </Link>
 );
 
-AnimatedLink.propTypes = {
-  title: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-  onMouseEnter: PropTypes.func,
+type AnimatedLinkArgs = {
+  title: string;
+  href: string | Url;
+  className: string;
+  onClick: MouseEventHandler;
+  onMouseEnter: MouseEventHandler;
 };
 
 export default AnimatedLink;
