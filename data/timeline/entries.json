@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "title": "Education",
+      "entries": [
+        {
+          "institution": "Hochschule Niederrhein",
+          "major": "Computer Science",
+          "description": "Bachelor of Science",
+          "date_start": "2018-10-01",
+          "date_end": false,
+          "type": "EDUCATION"
+        },
+        {
+          "institution": "Heinrich Heine Universität",
+          "major": "Computer Science",
+          "description": false,
+          "date_start": "2017-10-01",
+          "date_end": "2018-09-01",
+          "type": "EDUCATION"
+        }
+      ]
+    },
+    {
+      "title": "Experience",
+      "entries": [
+        {
+          "institution": "publicplan GmbH",
+          "description": "Junior Web Developer",
+          "date_start": "2021-09-01",
+          "date_end": false,
+          "type": "WORK"
+        },
+        {
+          "institution": "Limegreen IT",
+          "description": "Web Developer (Internship)",
+          "date_start": "2021-05-15",
+          "date_end": "2021-02-28",
+          "type": "WORK"
+        },
+        {
+          "institution": "eEvolution GmbH & Co. KG",
+          "description": ".NET Developer (Student Job)",
+          "date_start": "2019-01-01",
+          "date_end": "2019-01-31",
+          "type": "WORK"
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "iconType": "figma",
+      "description": "Figma"
+    },
+    {
+      "iconType": "python",
+      "description": "Python"
+    },
+    {
+      "iconType": "csharp",
+      "description": "C#"
+    },
+    {
+      "iconType": "tailwindcss",
+      "description": "Tailwind CSS"
+    },
+    {
+      "iconType": "git",
+      "description": "git"
+    },
+    {
+      "iconType": "nextjs",
+      "description": "Next.js"
+    },
+    {
+      "iconType": "vscode",
+      "description": "VS Code"
+    }
+  ]
+}
