@@ -7,7 +7,6 @@ import {
 
 import Link from "next/link";
 import Image from "next/image";
-import Icon from "../icons";
 
 const Footer = () => (
   <footer className="pt-16 pb-6 m-auto w-full max-w-[1260px]">
@@ -26,21 +25,31 @@ const Footer = () => (
           className="inline-flex items-center gap-4 relative pr-6 sm:mr-6 scroll-pr-6 md:scroll-pr-12 lg:scroll-pr-0 lg:pr-0 lg:mr-0 lg:!flex
           "
         >
-          <div className="border border-accent px-4 py-2 rounded-lg">
-            <NowPlaying />
+          <div className="inline-flex sticky left-0">
+            <Image
+              className="rounded-full z-10"
+              objectFit="cover"
+              src="/profile.jpg"
+              layout="fixed"
+              width={48}
+              height={48}
+            />
+
+            <div className="absolute left-0 h-full w-16 bg-gradient-to-r from-black" />
           </div>
           <a
-            className="p-4 rounded-lg border border-accent text-white"
+            className="font-medium px-2 py-1 rounded-md hover:text-white focus:text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-colors"
             href="https://github.com/itshoro"
           >
-            <Icon type="github" size={24} />
+            Github
           </a>
           <a
-            className="p-4 rounded-lg border border-accent text-white hover:text-[#1DA1F2] transition-colors"
+            className="font-medium px-2 py-1 rounded-md hover:text-white focus:text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-colors"
             href="https://twitter.com/horo_dev"
           >
-            <Icon type="twitter" size={24} />
+            Twitter
           </a>
+          <NowPlaying />
         </Carousell.Items>
       </Carousell>
 
