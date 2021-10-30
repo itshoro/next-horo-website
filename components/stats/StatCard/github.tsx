@@ -1,9 +1,9 @@
-import Base from "./base";
+import { StatCard as Base, LoadingCardArgs } from "./base";
 import useSWR from "swr";
 import fetcher from "@/lib/fetcher";
 import { Skeleton } from "@/components/skeleton";
 
-const GithubCard = ({ loading = false }) => {
+const GithubCard = ({ loading = false }: LoadingCardArgs) => {
   const { data, error } = useSWR("/api/github", fetcher);
   return (
     <Base title="Public Repositories">
