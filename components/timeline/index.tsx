@@ -21,8 +21,8 @@ const Timeline = ({
                 align={{ x: "start" }}
               >
                 <Carousell.Items className="space-x-12 px-6 lg:px-0 sm:px-12 lg:space-x-0 lg:space-y-8 lg:flex-col lg:w-full">
-                  {entries.map((entry_data) => {
-                    return <TimelineAreaEntry {...entry_data} />;
+                  {entries.map((entry_data, i) => {
+                    return <TimelineAreaEntry key={"timelineEntry" + i} {...entry_data} />;
                   })}
                 </Carousell.Items>
               </Carousell>
