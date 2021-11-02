@@ -10,28 +10,45 @@ const ProjectItem = ({
   tags,
   status,
   img,
-  logo,
   href,
 }: ProjectItemArgs) => {
   return (
     <article className="w-full">
-      <div className="relative h-96 rounded-lg overflow-hidden">
+      {/* <div className="relative h-96 rounded-lg overflow-hidden">
         <Image src={img} layout="fill" objectFit="cover" />
-      </div>
-      <div className="grid grid-cols-[300px,1fr] pt-8 pb-16">
+      </div> */}
+      <div className="grid grid-cols-[2fr,4fr] pt-8 pb-16">
         <div>
           <Text
             as="h3"
             color="foreground"
             weight="semibold"
-            className="pb-1 mb-1 text-lg"
+            className="pb-1 mb-1 text-lg flex gap-4"
           >
             {title}
+            {status && (
+              <div className="bg-[#ffadbd] dark:bg-[#34141a] inline-block px-3 rounded-lg">
+                <Text
+                  as="div"
+                  color="highlight"
+                  className="inline-block text-xs"
+                >
+                  {status}
+                </Text>
+              </div>
+            )}
           </Text>
-          <div className="bg-accent inline-block px-4 py-2 rounded-lg">
-            <Text as="div" color="foreground" className="inline-block text-sm">
-              {status}
-            </Text>
+          <div className="flex gap-4">
+            <div>
+              <Text
+                as="div"
+                color="foreground"
+                className="inline-flex items-center px-4 py-2 gap-2 rounded-lg border border-accent hover:bg-white/10 focus:bg-white/10 active:bg-white/[.15] select-none cursor-pointer transition-colors duration-150 text-sm"
+              >
+                <Icon type="github" size={16} />
+                Github
+              </Text>
+            </div>
           </div>
         </div>
         <div>
@@ -39,6 +56,7 @@ const ProjectItem = ({
             {description}
           </Text>
         </div>
+        <div></div>
       </div>
     </article>
 
@@ -84,7 +102,7 @@ const Projects = () => {
       tags: ["python", "sql", "api", "distributed"],
       href: "https://github.com/itshoro/basho",
       img: "/profile.jpg",
-      status: "In Progress",
+      // status: "In Progress",
     },
     {
       title: "MTag",
@@ -130,9 +148,8 @@ type ProjectItemArgs = {
   title: string;
   description: string;
   tags: string[];
-  status: string;
+  status?: string;
   img: string;
-  logo: string;
   href: string;
 };
 
