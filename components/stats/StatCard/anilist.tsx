@@ -1,8 +1,8 @@
-import Base from "./base";
+import { StatCard as Base, LoadingCardArgs } from "./base";
 import useSWR from "swr";
 import fetcher from "@/lib/fetcher";
 
-const AniListCard = ({ loading = false }) => {
+const AniListCard = ({ loading = false }: LoadingCardArgs) => {
   const { data, error } = useSWR("/api/anilist", fetcher);
   return (
     <Base title="Anime watched">

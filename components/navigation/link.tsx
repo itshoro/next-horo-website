@@ -10,8 +10,8 @@ const Link = ({ href, children }: LinkArgs) => {
     <NextLink href={href}>
       <a
         className={[
-          "block font-medium text-base md:text-sm py-2 my-2 md:py-0 md:my-0",
-          isCurrentPage ? "text-foreground" : "text-secondary",
+          "block font-medium text-base md:text-sm px-3 rounded py-1 my-2 md:my-0 hover:bg-white/10 focus:bg-white/10 active:bg-white/[.15] active:text-foreground transition-colors",
+          isCurrentPage ? "text-foreground bg-white/10" : "text-secondary",
         ]
           .filter((x) => x)
           .join(" ")}
