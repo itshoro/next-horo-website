@@ -21,8 +21,13 @@ const Timeline = ({
                 align={{ x: "start" }}
               >
                 <Carousell.Items className="space-x-12 px-6 lg:px-0 sm:px-12 lg:space-x-0 lg:space-y-8 lg:flex-col lg:w-full">
-                  {entries.map((entry_data) => {
-                    return <TimelineAreaEntry {...entry_data} />;
+                  {entries.map((entry_data, i) => {
+                    return (
+                      <TimelineAreaEntry
+                        key={"timelineEntry" + i}
+                        {...entry_data}
+                      />
+                    );
                   })}
                 </Carousell.Items>
               </Carousell>
@@ -73,7 +78,7 @@ const TimelineAreaEntry = ({
   date_end,
   type,
   description,
-  major,
+  occupation,
 }: TimelineAreaEntryArgs) => {
   const descriptionIcon = ResolveIcon(type);
 
@@ -95,11 +100,14 @@ const TimelineAreaEntry = ({
           {date_start && date.format(new Date(date_start), "MMM YYYY")}
           {date_start !== null && date_end !== null && <> &ndash; </>}
           {date_end ? date.format(new Date(date_end), "MMM YYYY") : "Present"}
-          {type === EntryType.EDUCATION && <> &middot; {major}</>}
+          <>
+            {" "}
+            &middot; <span className="font-bold">{occupation}</span>
+          </>
         </div>
       </div>
       {description && (
-        <div className="inline-flex rounded-lg py-1 px-3 select-none cursor-default text-secondary border border-white border-opacity-10 hover:bg-opacity-10 hover:border-transparent hover:bg-white hover:text-white transition-colors text-xs items-center gap-1 lg:border-none lg:px-0 lg:hover:bg-transparent">
+        <div className="inline-flex items-center text-xs rounded-lg gap-1 py-1 px-3 select-none cursor-default text-secondary bg-[#ffadbd] dark:bg-[#34141a] text-foxfire">
           {descriptionIcon}
           {description}
         </div>
@@ -120,7 +128,7 @@ type TimelineAreaEntryArgs = {
   date_end?: string;
   description?: string;
   type: EntryType;
-  major?: string;
+  occupation?: string;
 };
 
 export { Timeline };
