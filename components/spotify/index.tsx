@@ -1,4 +1,4 @@
-import NowPlaying from "./now_playing";
-import TopTracks from "./top_tracks";
+import NowPlaying from "./NowPlaying";
+import TopTracks from "./TopTracks";
 
 export { NowPlaying, TopTracks };

@@ -88,9 +88,9 @@ const AnimatedLink = ({
 type AnimatedLinkArgs = {
   title: string;
   href: string | Url;
-  className: string;
-  onClick: MouseEventHandler;
-  onMouseEnter: MouseEventHandler;
+  className?: string;
+  onClick?: MouseEventHandler;
+  onMouseEnter?: MouseEventHandler;
 };
 
 export default AnimatedLink;

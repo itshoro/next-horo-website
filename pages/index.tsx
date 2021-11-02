@@ -1,5 +1,5 @@
 import { AnimatedLink } from "@/components/links";
-import { Carousell, CarousellItems } from "@/components/containers";
+import { Carousell } from "@/components/containers";
 import Head from "next/head";
 import Image from "next/image";
 import { GetStaticProps } from "next";

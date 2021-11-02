@@ -15,16 +15,31 @@ const NowPlaying = ({ loading }: NowPlayingArgs) => {
         }
       : data;
 
+  const hideSongDisplay = !data || loading || !data.isPlaying;
+
   return (
-    <div className="group flex items-center gap-2 min-w-0">
-      <div className="text-white group-hover:text-[#1ED760] transition-colors">
+    <div
+      className={[
+        "group lg:ml-auto lg:flex-row-reverse flex items-center gap-2 min-w-0",
+      ]
+        .filter((x) => x)
+        .join(" ")}
+    >
+      <div
+        className={[
+          loading ? "animate-pulse" : !hideSongDisplay && "text-[#1ED760]",
+          " transition-colors",
+        ]
+          .filter((x) => x)
+          .join(" ")}
+      >
         <Icon type="spotify" size={24} />
       </div>
-      <div className="flex flex-col max-w-xs">
+      <div className="flex flex-col lg:items-end max-w-xs">
         <a
           className={[
-            "font-medium truncate flex-shrink-0 text-white rounded-md transition-all",
-            (!data || loading) && "skeleton",
+            "font-medium truncate flex-shrink-0 text-white rounded-md transition-all origin-left lg:origin-right",
+            hideSongDisplay ? "scale-0" : "scale-1 transition-transform",
           ]
             .filter((x) => x)
             .join(" ")}
@@ -34,8 +49,8 @@ const NowPlaying = ({ loading }: NowPlayingArgs) => {
         </a>
         <a
           className={[
-            "rounded-md transition-all",
-            !data || loading ? "skeleton" : "text-xs flex-shrink truncate",
+            "text-xs truncate flex-shrink rounded-md transition-all origin-left lg:origin-right",
+            hideSongDisplay ? "scale-0" : "scale-1 transition-transform",
           ]
             .filter((x) => x)
             .join(" ")}

@@ -253,7 +253,7 @@ const Navigation = ({
           <div className="h-auto z-50">{children}</div>
           <Button
             ref={navState.buttonRef}
-            className="rounded md:hidden p-1 bg-white bg-opacity-10 hover:bg-opacity-[.15] focus:bg-opacity-[.15]"
+            className="group rounded md:hidden p-1 bg-transparent hover:bg-white/10 focus:bg-white/10 active:bg-white/[.15] transition-colors duration-150"
             onClick={() => {
               if (navState.menuState === MenuState.Open) {
                 dispatch({ type: ActionType.CloseMenu });
@@ -269,35 +269,26 @@ const Navigation = ({
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
               fill="none"
-              viewBox="0 0 24 24"
+              viewBox="0 0 16 24"
               stroke="currentColor"
             >
               <g strokeLinecap="round" strokeLinejoin="round" strokeWidth={1}>
                 <path
-                  d="M4 6h16M4"
+                  d="M0 8h16"
                   className={[
                     "transform-gpu transition-transform duration-500 origin-center",
                     navState.menuState === MenuState.Open &&
-                      "rotate-45 translate-x-[-4px] translate-y-[4px]",
+                      "translate-y-[4px]",
                   ]
                     .filter((x) => x)
                     .join(" ")}
                 />
                 <path
-                  d="M4 12h16M4"
+                  d="M0 16h16"
                   className={[
-                    navState.menuState === MenuState.Open && "opacity-0",
-                    "transition-opacity duration-400",
-                  ]
-                    .filter((x) => x)
-                    .join(" ")}
-                />
-                <path
-                  d="M4 18h16"
-                  className={[
-                    "transform-gpu transition-transform duration-500 origin-center",
+                    "transform-gpu transition-transform duration-500 origin-l scale-x-50 group-hover:scale-100",
                     navState.menuState === MenuState.Open &&
-                      "-rotate-45 translate-x-[-4px] translate-y-[-5px]",
+                    "!scale-100 translate-y-[-4px]",
                   ]
                     .filter((x) => x)
                     .join(" ")}

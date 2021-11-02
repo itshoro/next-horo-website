@@ -45,3 +45,4 @@ type TrackArgs = {
 };
 
 export default Track;
+export type { TrackArgs };

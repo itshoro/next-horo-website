@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Logo = () => (
   <Link href="/">
-    <a className="block p-1 rounded hover:bg-white/[.15] focus:bg-white/[.15]">
+    <a className="block p-1 rounded hover:bg-white/10 focus:bg-white/10 active:bg-white/[.15] transition-colors duration-150">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
