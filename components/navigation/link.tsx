@@ -11,7 +11,9 @@ const Link = ({ href, children }: LinkArgs) => {
       <a
         className={[
           "block font-medium text-base md:text-sm px-3 rounded py-1 my-2 md:my-0 hover:bg-white/10 focus:bg-white/10 active:bg-white/[.15] active:text-foreground transition-colors",
-          isCurrentPage ? "text-foreground bg-white/10" : "text-secondary",
+          isCurrentPage
+            ? "text-foreground bg-white/10 border-t border-t-white/10"
+            : "text-secondary",
         ]
           .filter((x) => x)
           .join(" ")}
