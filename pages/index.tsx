@@ -26,33 +26,27 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Section className="flex flex-col w-full">
-        <div className="relative pb-16 pt-[25vh]">
-          <Text
-            as="h1"
-            className="text-3xl md:text-6xl"
-            weight="bold"
-            color="foreground"
-            style={{ lineHeight: "1.1" }}
-          >
-            Ohayo, my <br className="hidden md:block" />
-            name is <br className="hidden md:block" />
-            <span className="whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-br from-foxfire to-ember">
-              Tim Nelke
-            </span>
-            .
-          </Text>
-        </div>
+      <Section className="flex flex-col w-full pt-[25vh]">
+        <div className="leading-normal">
+          <Text as="div" className="md:max-w-[55ch]">
+            <div className="text-xl font-medium mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-foxfire to-ember">
+                Ohayō, my name is Tim Nelke
+              </span>{" "}
+              &mdash; a Junior Web Developer @ publicplan GmbH. I'm always up to
+              a challenge, trying out new stuff and learning about it, due to
+              being an avid gamer.
+            </div>
 
-        <div className="text-sm md:text-base leading-normal space-y-6">
-          <Text as="div" className="max-w-[55ch]">
-            Based in Willich, Germany, I’m a computer science student in my last
-            year of university. Venturing out to learn as much as I can.
+            <div className="text-secondary">
+              Fascinated with Japan and a walking box filled with trivia around
+              those videos you watch at 3am, because you can't sleep.
+            </div>
           </Text>
 
-          <div>
+          <div className="mt-12 md:mb-32">
             <AnimatedLink
-              className="font-medium"
+              className="font-medium background-white"
               title="View my resume"
               href="/lebenslauf.pdf"
             />
