@@ -8,7 +8,7 @@ const Link = ({
   children,
 }: LinkArgs) => {
   const className = [
-    "font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-sm text-white focus:bg-white/10 hover:bg-white/10 transition-all",
+    "text-foreground rounded-sm hover:text-foxfire transition-colors delay-75",
     underline && "underline",
   ]
     .filter((x) => x)
