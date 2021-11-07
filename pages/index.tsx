@@ -26,7 +26,7 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Section className="flex flex-col w-full pt-[25vh]">
+      <Section className="flex flex-col w-full pt-48">
         <div className="leading-normal">
           <Text as="div" className="md:max-w-[55ch]">
             <div className="text-xl font-medium mb-6">
@@ -39,8 +39,9 @@ export default function Home({
             </div>
 
             <div className="text-secondary">
-              Fascinated with Japan and a walking box filled with trivia around
-              those videos you watch at 3am, because you can't sleep.
+              Other than that I'm fascinated with Japan and walking box filled
+              with trivia around those videos you watch at 3am, because you
+              can't sleep.
             </div>
           </Text>
 
