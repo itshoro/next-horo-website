@@ -11,6 +11,7 @@ import { Timeline } from "@/components/timeline";
 import { promises as fs } from "fs";
 import path from "path";
 import Icon from "@/components/icons";
+import Landing from "@/components/landing";
 
 export default function Home({
   timeline_areas,
@@ -26,34 +27,7 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Section className="flex flex-col w-full pt-48">
-        <div className="leading-normal">
-          <Text as="div" className="md:max-w-[55ch]">
-            <div className="text-xl font-medium mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-foxfire to-ember">
-                Ohayō, my name is Tim Nelke
-              </span>{" "}
-              &mdash; a Junior Web Developer @ publicplan GmbH. I'm always up to
-              a challenge, trying out new stuff and learning about it, due to
-              being an avid gamer.
-            </div>
-
-            <div className="text-secondary">
-              Other than that I'm fascinated with Japan and walking box filled
-              with trivia around those videos you watch at 3am, because you
-              can't sleep.
-            </div>
-          </Text>
-
-          <div className="mt-12 md:mb-32">
-            <AnimatedLink
-              className="font-medium background-white"
-              title="View my resume"
-              href="/lebenslauf.pdf"
-            />
-          </div>
-        </div>
-      </Section>
+      <Landing />
 
       <div className="w-full h-96 z-[-1]">
         <div className="relative h-full">
@@ -194,7 +168,7 @@ export default function Home({
         </div>
       </div>
 
-      <InnerSection className="flex flex-col items-start md:gap-8 mb-12 -mt-16 w-full">
+      <InnerSection className="flex flex-col items-start md:gap-8 mb-12 -mt-16 w-full max-w-[720px]">
         <div className="flex md:flex-row rounded-full overflow-hidden">
           <Image
             layout="fixed"
@@ -215,7 +189,7 @@ export default function Home({
             So check out some of the things I’m great at, what I’ve achieved and
             what I’ve done. If you’re looking for some more casual achievements
             you can also{" "}
-            <Link external={true} href="/dashboard">
+            <Link external={false} href="/dashboard">
               take a look at my dashboard
             </Link>
             .
@@ -232,7 +206,7 @@ export default function Home({
                 Favorite Tools
               </h3>
               <Carousell
-                className="py-2 snap-px-6 md:snap-px-12 lg:snap-px-0"
+                className="py-2 scroll-px-6 md:scroll-px-12 lg:scroll-px-0"
                 scroll={{ direction: "x", type: "mandatory" }}
                 align="start"
               >
