@@ -1,0 +1,24 @@
+@media screen and (max-width: 768px) {
+    .carousel {
+        scroll-snap-type: var(--scroll-direction) var(--scroll-snap-behaviour);
+    
+        max-width: 100%;
+        overflow: auto;
+        display: flex;
+    }
+}
+
+
+.scroll-snap-behaviour-mandatory {
+    --scroll-snap-behaviour: mandatory;
+}
+.scroll-snap-behaviour-proximity {
+    --scroll-snap-behaviour: proximity;
+}
+
+.scroll-direction-x {
+    --scroll-direction: x;
+}
+.scroll-direction-y {
+    --scroll-direction: y;
+}
