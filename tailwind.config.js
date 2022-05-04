@@ -1,5 +1,9 @@
 module.exports = {
-  content: ["./pages/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./pages/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./layouts/**/*.tsx",
+  ],
   darkMode: "media",
   theme: {
     fontSize: {
@@ -15,6 +19,25 @@ module.exports = {
       "6xl": "6rem",
     },
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            color: "#fff",
+            a: {
+              color: "#F686B5",
+            },
+            h1: {
+              color: "#fff",
+              "font-weight": 600,
+            },
+            em: {
+              "font-family": "Caveat",
+              "font-size": "1.1em",
+              "padding-right": "0.1rem",
+            },
+          },
+        },
+      },
       flex: {
         expand: "0 1 100%",
       },
@@ -62,4 +85,5 @@ module.exports = {
       },
     },
   },
+  plugins: [require("@tailwindcss/typography")],
 };
