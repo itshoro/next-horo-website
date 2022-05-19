@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const CustomLink = (props) => {
+const CustomLink = (props: any) => {
   const href = props.href;
   const isInternalLink = href && (href.startsWith("/") || href.startsWith("#"));
 
