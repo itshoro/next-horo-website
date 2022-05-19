@@ -7,28 +7,33 @@ import { Link } from "@/components/link";
 
 const Dashboard = () => (
   <>
-    <InnerSection className="mt-24">
-      <Text color="foreground" className="text-4xl" weight="bold" as="h1">
+    <InnerSection className="pt-24 md:w-[min(100vw_-_4rem,_70ch)] mb-2">
+      <Text
+        color="foreground"
+        className="text-4xl pb-2"
+        weight="semibold"
+        as="h1"
+      >
         Dashboard
       </Text>
 
       <Text as="p" color="secondary">
-        I’m tracking some interesting and sometimes just nerdy stats about
+        I'm tracking some interesting and sometimes just nerdy stats about
         myself, this is realized through custom routes and is inspired by{" "}
         <Link href="https://leerob.io/dashboard">Lee Robinson's dashboard</Link>
         .
       </Text>
     </InnerSection>
-    <InnerSection className="py-8">
+    <InnerSection className="py-8 md:w-[min(100vw_-_4rem,_70ch)]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <GithubCard />
         <AniListCard />
       </div>
     </InnerSection>
-    <InnerSection className="py-8 space-y-2">
+    <InnerSection className="py-8 space-y-2 md:w-[min(100vw_-_4rem,_70ch)]">
       <Text
         as="h2"
-        weight="bold"
+        weight="semibold"
         className="pb-2 mb-2 text-xl"
         color="foreground"
         style={{ lineHeight: "1.1" }}

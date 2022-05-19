@@ -2,36 +2,22 @@ import NextLink from "next/link";
 import { ReactNode } from "react";
 
 const Link = ({ external = false, href, children }: LinkArgs) => {
-  return external ? (
+  return !external ? (
     <NextLink href={href}>
-      <a className="relative group">
+      <a className="relative text-[#F686B5] hover:underline">
         <span className="isolate">
-          <span className="group-hover:text-white [text-shadow:0_-1px_black,0_1px_black,-1px_0_black,1px_0_black]">
-            {children}
-          </span>
-          <svg
-            className="inline isolate h-3 ml-1 group-hover:animate-bounce group-hover:text-white transition-colors"
-            viewBox="0 0 16 16"
-            strokeWidth={1.35}
-          >
-            <g stroke="currentColor">
-              <line x1={15} x2={1} y1={1} y2={15}></line>
-              <line strokeLinecap="square" x2={8} x1={15} y1={1} y2={1}></line>
-              <line strokeLinecap="square" x2={15} x1={15} y1={8} y2={1}></line>
-            </g>
-          </svg>
+          <span>{children}</span>
         </span>
-        <span className="absolute -z-10 bottom-px left-0 w-full bg-skeleton_foreground group-hover:bg-white h-px group-hover:animate-link transition-colors"></span>
       </a>
     </NextLink>
   ) : (
-    <a href={href} className="relative group">
+    <a href={href} className="relative text-[#F686B5] hover:underline">
       <span className="isolate">
-        <span className="group-hover:text-white [text-shadow:0_-1px_black,0_1px_black,-1px_0_black,1px_0_black]">
+        <span>
           {children}
+          <span className="text-current translate-y-[4px]">&nbsp;&#8599;</span>
         </span>
       </span>
-      <span className="absolute -z-10 bottom-px left-0 w-full bg-skeleton_foreground group-hover:bg-white h-px group-hover:animate-link transition-colors"></span>
     </a>
   );
 };

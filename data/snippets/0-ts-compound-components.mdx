@@ -1,0 +1,39 @@
+---
+title: "Compound Components in TypeScript"
+date: "2022-05-01"
+# keywords:
+
+# ["compound component", "component dot", "typescript", "ts", "dot notation"]
+---
+
+export const meta = {
+  title: "Compound Components in TypeScript",
+};
+
+# {meta.title}
+
+Compound components allow you to expose them via a main component. This is _pretty_ nifty if you want to restrict access to them, for example if they consist of component specific logic that wouldn't work outside of the given main component.
+
+In vanilla JavaScript it is easy to achieve as all you have to do is add a new key to the functional component. In TypeScript you can use the following snippet as a bootstrap.
+
+```tsx
+interface ElementProps {
+  foo: number;
+}
+
+interface CompoundProps {
+  bar: string;
+}
+
+const Compound: FC<CompoundProps> = (props) => {
+  // ...
+};
+
+const Element: FC<ElementProps> & { Compound: FC<CompoundProps> } = (props) => {
+  // ...
+};
+
+Element.Compound = Compound;
+
+export { Element };
+```

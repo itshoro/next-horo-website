@@ -1,10 +1,10 @@
 import { Text } from "@/components/text";
 
-const { Section } = require("@/components/containers/Section");
+import { Section } from "@/components/containers/Section";
 
 const ProjectItem = ({ title, description, tags, href }: ProjectItemArgs) => {
   return (
-    <article className="group select-none mb-16">
+    <article className="group select-none py-8 mb-8">
       <a href={href}>
         <div className="max-w-md">
           <div>
@@ -77,13 +77,13 @@ const Projects = () => {
 
   return (
     <>
-      <Section className="mt-24">
-        <Text color="foreground" weight="bold" className="text-4xl" as="h2">
+      <Section className="pt-24 md:w-[min(100vw_-_4rem,_70ch)]">
+        <Text color="foreground" weight="semibold" className="text-4xl" as="h2">
           Projects
         </Text>
       </Section>
 
-      <Section className="fles items-start pt-8">
+      <Section className="divide-y divide-accent pt-16 md:w-[min(100vw_-_4rem,_70ch)]">
         {projects.map((project) => (
           <ProjectItem {...project} />
         ))}
