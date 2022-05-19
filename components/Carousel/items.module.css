@@ -1,0 +1,33 @@
+@media screen and (max-width: 768px) {
+    .items {
+        display: inline-flex;
+    }
+    
+    .item {
+        flex-shrink: 0;
+        min-width: max(var(--min-size), var(--max-size));
+    
+        scroll-snap-align: var(--scroll-snap-align);
+        scroll-snap-stop: var(--scroll-snap-stop-behaviour);
+    }
+}
+
+.snap-align-start {
+    --scroll-snap-align: start;
+}
+.snap-align-center {
+    --scroll-snap-align: center;
+}
+.snap-align-end {
+    --scroll-snap-align: end;
+}
+.snap-align-none {
+    --scroll-snap-align: none;
+}
+
+.snap-stop-always {
+    --scroll-snap-stop-behaviour: always;
+}
+.snap-stop-normal {
+    --scroll-snap-stop-behaviour: normal;
+}

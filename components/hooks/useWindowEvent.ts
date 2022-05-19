@@ -14,7 +14,6 @@ const useWindowEvent = <T extends keyof WindowEventMap>(
     };
 
     window.addEventListener(type, eventHandler, options);
-    () => {};
   }, [type, options]);
 };
 

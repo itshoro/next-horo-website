@@ -1,7 +1,10 @@
 module.exports = {
-  mode: "jit",
-  purge: ["./pages/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
-  darkMode: "media", // or 'media' or 'class'
+  content: [
+    "./pages/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./layouts/**/*.tsx",
+  ],
+  darkMode: "media",
   theme: {
     fontSize: {
       xs: "0.75rem",
@@ -16,6 +19,25 @@ module.exports = {
       "6xl": "6rem",
     },
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            color: "#fff",
+            a: {
+              color: "#F686B5",
+            },
+            h1: {
+              color: "#fff",
+              "font-weight": 600,
+            },
+            em: {
+              "font-family": "Caveat",
+              "font-size": "1.1em",
+              "padding-right": "0.1rem",
+            },
+          },
+        },
+      },
       flex: {
         expand: "0 1 100%",
       },
@@ -63,10 +85,5 @@ module.exports = {
       },
     },
   },
-  variants: {
-    extend: {
-      scrollSnapType: ["responsive"],
-    },
-  },
-  plugins: [require("tailwindcss-scroll-snap")],
+  plugins: [require("@tailwindcss/typography")],
 };

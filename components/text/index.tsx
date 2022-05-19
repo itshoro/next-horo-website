@@ -26,6 +26,7 @@ const colorToTailwindClass = {
   skeleton_foreground: "text-skeleton_foreground",
   transparent: "text-transparent",
   accent: "text-accent",
+  highlight: "text-foxfire",
   secondary: "text-secondary",
 };
 
@@ -86,6 +87,7 @@ type TextArgs = {
     | "skeleton_foreground"
     | "accent"
     | "transparent"
+    | "highlight"
     | "secondary";
   className?: string;
   // size?: 12 | 14 | 16 | 20 | 24 | 32 | 40 | 48 | 64 | 96;

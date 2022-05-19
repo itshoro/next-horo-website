@@ -33,7 +33,7 @@ const Button = forwardRef(
   }
 );
 
-type ButtonArgs = {
+export type ButtonArgs = {
   prefix?: ReactNode;
   suffix?: ReactNode;
   className?: string;
