@@ -98,22 +98,18 @@ a {
 }
 
 .animated-underline {
-  /* Linear Gradients can be layered, unlike normal fills colors */
-
-  background: linear-gradient(
-      var(--skeleton_foreground),
-      var(--skeleton_foreground)
-    ),
-    linear-gradient(currentColor, currentColor);
-  background-position: 100% 100%, 0 100%;
-  background-size: var(--position, 100%) 1px, 100% 1px;
+  background: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-size: var(--position, 100%) 1px;
   background-repeat: no-repeat;
 
-  transition: background-size 400ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: background-size 500ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-*:hover > .animated-underline,
+.group:hover > .animated-underline,
 .animated-underline:hover {
+  background-position: 100% 100%;
+
   --position: 0%;
 }
 
