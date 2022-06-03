@@ -17,8 +17,8 @@ const Footer = () => (
         snap="proximity"
         className="relative mt-6 py-2 mb-8 space-x-2 md:flex ml-8 pr-8 md:ml-0 md:px-24"
       >
-        <Carousel.Fixed>
-          <div className="inline-flex sticky left-0">
+        <Carousel.Fixed position="left-0">
+          <div className="inline-flex">
             <Image
               className="rounded-full z-10"
               objectFit="cover"
