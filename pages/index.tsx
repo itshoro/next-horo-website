@@ -1,5 +1,5 @@
 import { Carousel } from "@/components/Carousel";
-import Icon from "@/components/icons";
+import Icon, { IconType } from "@/components/icons";
 import { Link } from "@/components/link";
 import { GetStaticProps } from "next";
 import Image from "next/image";
@@ -9,6 +9,7 @@ import { DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from "react";
 import { promises as fs } from "fs";
 import path from "path";
 import { Bars } from "./_app";
+import { Minimal } from "@/components/Card/project";
 
 const Index = ({ favorite_tools }: { favorite_tools: any }) => {
   return (
@@ -25,32 +26,46 @@ const Index = ({ favorite_tools }: { favorite_tools: any }) => {
       <Carousel
         direction="x"
         snap="mandatory"
-        className="px-6 py-4 md:px-0 md:max-w-[60ch] md:mx-auto"
+        className="px-6 py-2 md:px-0 md:max-w-[60ch] md:mx-auto my-4"
       >
         <Carousel.Items
-          alignment="center"
+          alignment="start"
           stopBehaviour="normal"
           className="space-x-3 md:space-x-0 md:grid md:grid-cols-2 md:gap-4"
-          sizeAtleast="calc(100vw - 3rem)"
+          sizeAtleast="calc(50vw - 2.5rem)"
         >
-          <ProjectItem
-            label="Basho"
-            description="Decentralized pax-counter"
-            icon="1"
+          <Minimal
+            className="scroll-m-6"
+            label="nworking"
+            icon={"python" as IconType}
+            href=""
           />
-          <ProjectItem label="MTag" description="ID3v2 library" icon="2" />
+          <Minimal
+            className="scroll-m-6"
+            label="Basho"
+            icon={"python" as IconType}
+            href=""
+          />
+          <Minimal
+            className="scroll-m-6"
+            label="MTag"
+            icon={"csharp" as IconType}
+            href=""
+          />
         </Carousel.Items>
       </Carousel>
 
-      <a className="px-6 group" href="#">
-        <div className="border-b px-6 border-accent py-4 max-w-[60ch] mx-auto">
+      <a className="px-6  group" href="#">
+        <div className="px-6 md:px-0 border-b border-accent py-4 max-w-[60ch] mx-auto">
           <div className="flex items-center justify-start gap-4 text-sm ">
-            <div className="h-8 w-8 pt-px italic flex items-center justify-center bg-accent rounded-full flex-none group-hover:translate-x-2 transition-transform">
+            <div className="h-8 w-8 pt-px italic flex items-center justify-center bg-accent rounded-full flex-none scale-75 group-hover:scale-100 transition-transform">
               <span className="group-hover:rotate-45 group-hover:-translate-x-px transition-transform">
                 &#8599;
               </span>
             </div>
-            <div className="font-semibold">Check out my full resume</div>
+            <div className="font-semibold transition-colors group-hover:text-white">
+              Check out my full resume
+            </div>
           </div>
         </div>
       </a>
@@ -77,12 +92,9 @@ const Index = ({ favorite_tools }: { favorite_tools: any }) => {
                   </div>
                   <div className="whitespace-nowrap max-w-full truncate text-sm">
                     Junior Web Developer{" "}
-                    <a
-                      href="https://publicplan.de"
-                      className="text-[#F686B5] inline-block p-2 -m-2"
-                    >
+                    <Link external={true} href="https://publicplan.de">
                       @publicplan GmbH
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -239,20 +251,21 @@ const Landing = () => {
           </div>
         </div>
         <div className="py-6 max-w-[60ch] mx-auto">
-          <div className="my-6 text-lg text-white font-caveat">Ohayō.</div>
+          <div className="my-6 text-lg  font-caveat">Ohayō.</div>
 
-          <div className="space-y-4 my-4 leading-relaxed">
+          <div className="space-y-4 my-4 leading-relaxed text-white">
             <p>
               I'm a Junior Web Developer working{" "}
               <Link href="https://www.publicplan.de" external={true}>
-                @ publicplan GmbH
+                <span className="mr-px">@</span>publicplan GmbH
               </Link>
-              . I help to modernize forms and how people interact digitaly with
-              the public sector.
+              . I help to improve how people interact digitally with the public
+              sector.
             </p>
             <p>
-              Best described as a walking encyclopedia about trivia videos you
-              would watch at 3am and fascinated with Japan.
+              Outside of work I'd be best described as a walking encyclopedia
+              about trivia videos you would watch at 3am and fascinated with
+              Japan.
             </p>
           </div>
         </div>

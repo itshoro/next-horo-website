@@ -9,7 +9,7 @@ import { GithubIcon } from "./github";
 import { TwitterIcon } from "./twitter";
 import { SpotifyIcon } from "./spotify";
 
-const Icon = ({ type, size }: IconArgs) => {
+const Icon = ({ type, size }: IconProps) => {
   switch (type) {
     case IconType.CSharp:
       return <CSharpIcon size={size} />;
@@ -36,12 +36,12 @@ const Icon = ({ type, size }: IconArgs) => {
   }
 };
 
-type IconArgs = {
+export interface IconProps {
   type: IconType | string;
   size?: number;
-};
+}
 
-enum IconType {
+export enum IconType {
   CSharp = "csharp",
   Figma = "figma",
   NextJS = "nextjs",

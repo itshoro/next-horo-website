@@ -1,0 +1,8 @@
+.bleed {
+    background: radial-gradient(circle at top left, var(--accent, transparent), transparent 70%);
+    transition: ease-out transform 300ms;
+}
+
+*:hover > .bleed {
+    transform: scale(10);
+}

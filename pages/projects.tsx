@@ -1,8 +1,10 @@
 import { Text } from "@/components/text";
 
 import { Section } from "@/components/containers/Section";
+import { ProjectCard } from "@/components/Card/project";
+import { IconType } from "@/components/icons";
 
-const ProjectItem = ({ title, description, tags, href }: ProjectItemArgs) => {
+const ProjectItem = ({ label, description, tags, href }: ProjectItemArgs) => {
   return (
     <article className="group select-none py-8 mb-8">
       <a href={href}>
@@ -14,24 +16,7 @@ const ProjectItem = ({ title, description, tags, href }: ProjectItemArgs) => {
               weight="semibold"
               className="mb-2 flex items-center gap-2"
             >
-              {title}
-              <svg
-                className="h-6 select-none font-normal opacity-0 scale-75 -translate-x-2 group-hover:scale-100 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-200"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 120 120"
-              >
-                <circle cx="50%" cy="50%" r="58" fill="#1a1a1a" />
-                <text
-                  x="50%"
-                  y="50%"
-                  textAnchor="middle"
-                  dominantBaseline="central"
-                  fill="currentColor"
-                  fontSize="64"
-                >
-                  &rarr;
-                </text>
-              </svg>
+              {label}
             </Text>
           </div>
           <div>
@@ -44,7 +29,6 @@ const ProjectItem = ({ title, description, tags, href }: ProjectItemArgs) => {
               {description}
             </Text>
           </div>
-          <div></div>
         </div>
       </a>
       <div>
@@ -61,16 +45,18 @@ const ProjectItem = ({ title, description, tags, href }: ProjectItemArgs) => {
 const Projects = () => {
   const projects = [
     {
-      title: "BASHO",
+      label: "BASHO",
       description:
         "A python based distributed system, simulating a pax counter. Built for a university asignment.",
       tags: ["python", "sql", "api", "distributed"],
+      icon: "python" as IconType,
       href: "https://github.com/itshoro/basho",
     },
     {
-      title: "MTag",
+      label: "MTag",
       description: "Lightweight ID3v2 Tag reader.",
-      tags: ["c#", "byte operations", "files"],
+      tags: ["csharp", "byte operations", "files"],
+      icon: "csharp" as IconType,
       href: "https://github.com/itshoro/mtag",
     },
   ];
@@ -83,9 +69,9 @@ const Projects = () => {
         </Text>
       </Section>
 
-      <Section className="divide-y divide-accent pt-16 md:w-[min(100vw_-_4rem,_70ch)]">
+      <Section className="divide-y space-y-8 divide-accent pt-16 md:w-[min(100vw_-_4rem,_70ch)]">
         {projects.map((project) => (
-          <ProjectItem {...project} />
+          <ProjectCard key={project.label} {...project} />
         ))}
       </Section>
     </>
@@ -93,7 +79,7 @@ const Projects = () => {
 };
 
 type ProjectItemArgs = {
-  title: string;
+  label: string;
   description: string;
   tags: string[];
   href: string;
