@@ -46,7 +46,6 @@ const Items: FC<ItemsProps> = ({
 
         const classNames = [
           element.props.className,
-          styles.item,
           snapStopClassname,
           alignmentClassname,
         ]

@@ -3,7 +3,7 @@
         display: inline-flex;
     }
     
-    .item {
+    .items > * {
         flex-shrink: 0;
         min-width: max(var(--min-size), var(--max-size));
     
