@@ -32,24 +32,38 @@ const ProjectCard: FC<
     DetailedHTMLProps<HTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>
 > = ({ label, description, href, icon, tags, className, ...props }) => {
   return (
-    <a
-      {...props}
-      className={[className, "block"].filter((x) => x).join(" ")}
-      href={href}
-    >
-      <Body className="overflow-hidden">
-        <Bleed accent={mapIconToColor(icon)} />
-        <div className="p-8 space-y-2 isolate">
-          <div className="relative">
+    <Body className="overflow-hidden">
+      <Bleed accent={mapIconToColor(icon)} />
+      <div className="p-6 isolate">
+        <div className="flex flex-col md:flex-row items-start gap-4 mb-2">
+          <div className="">
             <IconWrapper type={icon} size={20} />
           </div>
-          <div className="space-y-1">
-            <div className="font-medium text-white">{label}</div>
-            <div className="text-sm">{description}</div>
+          <div className="space-y-2 w-full">
+            <div className="flex gap-4 items-center justify-start w-full">
+              <div className="font-medium text-white">{label}</div>
+            </div>
+            <div className="break-words pb-4">{description}</div>
           </div>
         </div>
-      </Body>
-    </a>
+        <div className="pt-4 border-t w-full border-t-white/10">
+          <a
+            {...props}
+            className={[className, "block ml-auto"].filter((x) => x).join(" ")}
+            href={href}
+          >
+            <div className="group rounded-lg bg-black/30 hover:bg-black/50 transition-colors duration-200 ease-out inline-block p-4">
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-semibold text-white">
+                  View on
+                </span>
+                <Icon type="github" size={16} />
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </Body>
   );
 };
 
@@ -73,10 +87,10 @@ const Minimal: FC<
   );
 };
 
-const HoverArrow = () => {
+export const HoverArrow = () => {
   return (
     <svg
-      className="ml-auto h-6 select-none font-normal opacity-0 scale-75 -translate-x-2 group-hover:scale-100 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-200"
+      className="h-6 select-none font-normal opacity-0 scale-75 -translate-x-2 group-hover:scale-100 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-200"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 120 120"
     >

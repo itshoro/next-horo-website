@@ -63,13 +63,13 @@ const Projects = () => {
 
   return (
     <>
-      <Section className="pt-24 md:w-[min(100vw_-_4rem,_70ch)]">
-        <Text color="foreground" weight="semibold" className="text-4xl" as="h2">
+      <Section className="pt-24 md:w-[min(100vw_-_4rem,_70ch)] pb-8">
+        <Text color="foreground" weight="semibold" className="text-xl" as="h1">
           Projects
         </Text>
       </Section>
 
-      <Section className="divide-y space-y-8 divide-accent pt-16 md:w-[min(100vw_-_4rem,_70ch)]">
+      <Section className="space-y-8 md:w-[min(100vw_-_4rem,_70ch)]">
         {projects.map((project) => (
           <ProjectCard key={project.label} {...project} />
         ))}

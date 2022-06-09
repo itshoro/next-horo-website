@@ -14,14 +14,11 @@ import { Minimal } from "@/components/Card/project";
 const Index = ({ favorite_tools }: { favorite_tools: any }) => {
   return (
     <>
-      <div className="pt-[15vh]" />
+      <div className="pt-16 md:pt-32" />
       <Landing />
-      <div className="mb-6 mx-auto" />
 
       <div className="pt-8 px-6 md:px-0 max-w-[60ch] mx-auto">
-        <NextLink href="/projects">
-          <a className="text-white">Selected Projects </a>
-        </NextLink>
+        <div className="text-white font-semibold">Selected Projects</div>
       </div>
       <Carousel
         direction="x"
@@ -30,7 +27,7 @@ const Index = ({ favorite_tools }: { favorite_tools: any }) => {
       >
         <Carousel.Items
           alignment="start"
-          stopBehaviour="normal"
+          stopBehaviour="always"
           className="space-x-3 md:space-x-0 md:grid md:grid-cols-2 md:gap-4"
           sizeAtleast="calc(50vw - 2.5rem)"
         >
@@ -55,8 +52,8 @@ const Index = ({ favorite_tools }: { favorite_tools: any }) => {
         </Carousel.Items>
       </Carousel>
 
-      <a className="px-6  group" href="#">
-        <div className="px-6 md:px-0 border-b border-accent py-4 max-w-[60ch] mx-auto">
+      <a className="px-6 group" href="#">
+        <div className="px-6 border-b border-b-accent md:px-0 py-4 max-w-[60ch] mx-auto">
           <div className="flex items-center justify-start gap-4 text-sm ">
             <div className="h-8 w-8 pt-px italic flex items-center justify-center bg-accent rounded-full flex-none scale-75 group-hover:scale-100 transition-transform">
               <span className="group-hover:rotate-45 group-hover:-translate-x-px transition-transform">
@@ -72,38 +69,39 @@ const Index = ({ favorite_tools }: { favorite_tools: any }) => {
 
       <TextSection />
 
-      <section className="max-w-[60ch] mx-auto">
-        <div className="my-16">
+      <section>
+        <div className="max-w-[60ch] mx-auto">
+          <h3 className="text-white font-semibold px-8 md:p-0">Quick Facts</h3>
+        </div>
+        <div className="mb-8 md:max-w-[60ch] mx-auto">
           <Carousel
             direction="x"
             snap="mandatory"
-            className="px-8 py-4 md:px-0"
+            className="px-8 py-2 md:px-0 my-4"
           >
             <Carousel.Items
-              alignment="center"
+              alignment="start"
               sizeAtleast="auto"
               stopBehaviour="normal"
-              className="space-x-4 md:flex"
+              className="space-x-4 md:flex items-start"
             >
-              <div className="bg-accent p-4 rounded-2xl w-[calc(100vw_-_4rem)] md:w-full md:flex-grow-1">
+              <div className="bg-accent p-4 rounded-2xl w-[calc(100vw_-_3.5rem)] md:w-full md:flex-grow-1 scroll-m-8">
                 <div>
-                  <div className="mb-2">
-                    <strong className="text-white">Current Occupation</strong>
-                  </div>
-                  <div className="whitespace-nowrap max-w-full truncate text-sm">
-                    Junior Web Developer{" "}
-                    <Link external={true} href="https://publicplan.de">
-                      @publicplan GmbH
-                    </Link>
+                  <div className="mb-2 text-sm">Current Occupation</div>
+                  <div className="whitespace-nowrap max-w-full truncate font-medium text-white">
+                    <div className="inline-flex flex-row flex-wrap">
+                      Junior Web Developer
+                      <Link external={true} href="https://publicplan.de">
+                        @publicplan GmbH
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
               <div className="bg-accent p-4 rounded-2xl w-[calc(100vw_-_4rem)] md:w-full md:flex-grow-1">
                 <div className="whitespace-nowrap">
-                  <div className="mb-2">
-                    <strong className="text-white">Education</strong>
-                  </div>
-                  <div className="whitespace-nowrap max-w-full truncate text-sm">
+                  <div className="mb-2 text-sm">Education</div>
+                  <div className="whitespace-nowrap max-w-full truncate font-medium text-white">
                     B. Sc. Computer Science
                   </div>
                 </div>
@@ -112,9 +110,11 @@ const Index = ({ favorite_tools }: { favorite_tools: any }) => {
           </Carousel>
         </div>
 
-        <div className="my-16">
-          <h3 className="text-white px-8 md:p-0">Favorite Tools</h3>
-          <Carousel direction="x" className="scroll-px-8 px-8 py-4 md:p-0">
+        <div className="mb-8 md:max-w-[60ch] mx-auto">
+          <h3 className="text-white font-semibold px-8 md:p-0">
+            Favorite Tools
+          </h3>
+          <Carousel direction="x" className="scroll-px-8 px-8 py-2 md:p-0">
             <Carousel.Items
               className="space-x-4 md:flex"
               stopBehaviour="normal"
@@ -234,7 +234,7 @@ const Landing = () => {
     <>
       <Bars />
       <div className="flex flex-col justify-center pt-16 px-6">
-        <div className="max-w-[60ch] w-full mx-auto">
+        <div className="max-w-[60ch] w-full mx-auto border-b-accent border-b">
           <Image
             priority={true}
             layout="fixed"
@@ -246,18 +246,20 @@ const Landing = () => {
             height={96}
           />
           <div className="py-6">
-            <div className="font-semibold text-white text-lg">Tim Nelke</div>
+            <div className="font-semibold text-white">Tim Nelke</div>
             <div>A Design Interested Software Engineer</div>
           </div>
         </div>
-        <div className="py-6 max-w-[60ch] mx-auto">
-          <div className="my-6 text-lg  font-caveat">Ohayō.</div>
+        <div className="py-12 max-w-[60ch] mx-auto">
+          <div className="text-[1.375rem] lg:text-lg font-caveat text-white">
+            Ohayō.
+          </div>
 
-          <div className="space-y-4 my-4 leading-relaxed text-white">
+          <div className="space-y-4 my-2 leading-relaxed">
             <p>
-              I'm a Junior Web Developer working{" "}
+              I'm a Junior Software Developer working{" "}
               <Link href="https://www.publicplan.de" external={true}>
-                <span className="mr-px">@</span>publicplan GmbH
+                <span className="mr-1">@</span>publicplan GmbH
               </Link>
               . I help to improve how people interact digitally with the public
               sector.
