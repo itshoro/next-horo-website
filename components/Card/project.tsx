@@ -76,9 +76,11 @@ const Minimal: FC<
       <Body className={"group overflow-hidden"}>
         <Bleed accent={mapIconToColor(icon)} />
         <div className="p-4 space-y-2 isolate">
-          <div className="flex items-center gap-4">
-            <IconWrapper type={icon} size={20} />
-            <h1 className="text-white font-medium text-sm">{label}</h1>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <IconWrapper type={icon} size={20} />
+              <h1 className="text-white font-medium text-sm">{label}</h1>
+            </div>
             <HoverArrow />
           </div>
         </div>
