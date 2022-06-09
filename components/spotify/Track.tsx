@@ -2,18 +2,23 @@ import { Text } from "@/components/text";
 import { Entity } from "@/components/entity";
 import Image from "next/image";
 import { Url } from "url";
+import { FC } from "react";
+import { HoverArrow } from "../Card/project";
 
-const Track = ({
+const Track: FC<TrackArgs> = ({
   artists,
   artistsUrl,
   imageSrc,
   songUrl,
   title,
   loading = false,
-}: TrackArgs) => {
+}) => {
   return (
-    <article className="border border-accent rounded-lg p-4">
-      <Entity loading={loading} className="items-center space-x-4">
+    <article className="bg-accent rounded-2xl px-6 py-4 sm:p-4 sm:pr-6 max-w-full">
+      <Entity
+        loading={loading}
+        className="flex-col sm:flex-row items-center gap-4"
+      >
         <Entity.Thumbnail className="w-16 h-16">
           {!loading && (
             <Image

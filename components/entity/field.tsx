@@ -20,7 +20,7 @@ const EntityField = ({ title, description, align }: EntityFieldArgs) => {
   return (
     <div
       className={[
-        "flex-1 flex flex-col min-w-0",
+        "flex-1 flex flex-col min-w-0 max-w-full",
         alignClass,
         loading && "space-y-2",
       ]
@@ -30,7 +30,7 @@ const EntityField = ({ title, description, align }: EntityFieldArgs) => {
       <Skeleton show={loading}>
         <Text
           color={loading ? "transparent" : "foreground"}
-          weight="bold"
+          weight="medium"
           as="div"
           truncate={true}
         >

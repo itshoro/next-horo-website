@@ -11,14 +11,14 @@ const Skeleton = ({
   return (
     <span
       className={[
-        "skeleton w-full rounded inline-flex select-none",
-        inline ? "h-auto" : "h-full",
+        "skeleton rounded inline-flex select-none isolate",
+        inline ? "h-auto" : "h-full w-full",
         className,
       ]
         .filter((x) => x)
         .join(" ")}
     >
-      {children}
+      <div className="opacity-0">{children}</div>
     </span>
   );
 };

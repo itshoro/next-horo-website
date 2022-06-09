@@ -25,10 +25,14 @@ const TopTracks = ({ loading = false }) => {
 
   return (
     <>
-      {tracks.map((track: TrackData, i: number) => {
-        const img = (track.images && track.images[1]?.url) || "";
-        return <Track key={`${track.title}-${i}`} {...track} imageSrc={img} />;
-      })}
+      <div className="grid grid-cols-2 gap-4">
+        {tracks.map((track: TrackData, i: number) => {
+          const img = (track.images && track.images[1]?.url) || "";
+          return (
+            <Track key={`${track.title}-${i}`} {...track} imageSrc={img} />
+          );
+        })}
+      </div>
     </>
   );
 };

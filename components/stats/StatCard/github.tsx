@@ -8,9 +8,9 @@ const GithubCard = ({ loading = false }: LoadingCardArgs) => {
   return (
     <Base title="Public Repositories">
       <Skeleton inline={true} show={!data || loading}>
-        <div className="font-bold text-lg">
+        <span className="font-medium text-white text-lg tabular-nums">
           {data ? data.public_repos.toLocaleString() : "Loading..."}
-        </div>
+        </span>
       </Skeleton>
     </Base>
   );

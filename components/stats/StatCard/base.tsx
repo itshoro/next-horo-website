@@ -1,10 +1,11 @@
-import PropTypes from "prop-types";
 import { ReactElement } from "react";
 
 const StatCard = ({ title, children }: StatCardArgs) => (
-  <div className="border border-accent rounded-lg text-white py-2 px-4 text-sm">
-    <div className="capitalize pb-2">{title}</div>
-    {children}
+  <div className="bg-accent rounded-lg text-secondary py-4 px-6 text-sm">
+    <div className="flex items-baseline justify-between gap-4">
+      <div className="capitalize pb-2 flex-shrink-0">{title}</div>
+      {children}
+    </div>
   </div>
 );
 

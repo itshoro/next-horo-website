@@ -8,19 +8,16 @@ import { Link } from "@/components/link";
 const Dashboard = () => (
   <>
     <InnerSection className="pt-24 md:w-[min(100vw_-_4rem,_70ch)] mb-2">
-      <Text
-        color="foreground"
-        className="text-4xl pb-2"
-        weight="semibold"
-        as="h1"
-      >
+      <Text color="foreground" weight="semibold" className="text-xl" as="h1">
         Dashboard
       </Text>
 
-      <Text as="p" color="secondary">
+      <Text as="p" className="my-4 leading-normal" color="secondary">
         I'm tracking some interesting and sometimes just nerdy stats about
         myself, this is realized through custom routes and is inspired by{" "}
-        <Link href="https://leerob.io/dashboard">Lee Robinson's dashboard</Link>
+        <Link external={true} href="https://leerob.io/dashboard">
+          Lee Robinson's dashboard
+        </Link>
         .
       </Text>
     </InnerSection>
@@ -34,7 +31,7 @@ const Dashboard = () => (
       <Text
         as="h2"
         weight="semibold"
-        className="pb-2 mb-2 text-xl"
+        className="pb-2 mb-2 text-lg"
         color="foreground"
         style={{ lineHeight: "1.1" }}
       >
