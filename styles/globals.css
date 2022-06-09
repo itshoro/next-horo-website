@@ -25,12 +25,40 @@
 @tailwind components;
 
 :root {
-  --foreground: #fff;
-  --background: #000;
-  --skeleton_background: #111;
-  --skeleton_foreground: #3a3a3a;
-  --accent: #1a1a1a;
-  --secondary: #b7b7b7;
+  --foreground: var(--foreground-dark);
+  --background: var(--background-dark);
+  --skeleton_background: var(--skeleton_background-dark);
+  --skeleton_foreground: var(--skeleton_foreground-dark);
+  --accent: var(--accent-dark);
+  --secondary: var(--secondary-dark);
+
+  --foreground-light: 0 0 0;
+  --foreground-dark: 255 255 255;
+
+  --secondary-light: 87 87 87;
+  --secondary-dark: 183 183 183;
+
+  --background-light: 255 255 255;
+  --background-dark: 0 0 0;
+
+  --skeleton_background-light: 238 238 238;
+  --skeleton_foreground-light: 151 151 151;
+  --skeleton_background-dark: 17 17 17;
+  --skeleton_foreground-dark: 58 58 58;
+
+  --accent-light: 224 224 224;
+  --accent-dark: 26 26 26;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground: var(--foreground-light);
+    --background: var(--background-light);
+    --skeleton_background: var(--skeleton_background-light);
+    --skeleton_foreground: var(--skeleton_foreground-light);
+    --accent: var(--accent-light);
+    --secondary: var(--secondary-light);
+  }
 }
 
 .font-caveat {

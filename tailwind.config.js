@@ -42,30 +42,14 @@ module.exports = {
         expand: "0 1 100%",
       },
       colors: {
-        foxfire: ({ opacityVariable, opacityValue }) => {
-          if (opacityValue !== undefined) {
-            return `hsla(348deg,91%,50%,${opacityValue})`;
-          }
-          if (opacityVariable !== undefined) {
-            return `hsla(348deg,91%,50%,${opacityVariable})`;
-          }
-          return `hsl(348deg,91%,50%)`;
-        },
-        ember: ({ opacityVariable, opacityValue }) => {
-          if (opacityValue !== undefined) {
-            return `hsla(331deg,88%,46%,${opacityValue})`;
-          }
-          if (opacityVariable !== undefined) {
-            return `hsla(331deg,88%,46%,${opacityVariable})`;
-          }
-          return `hsl(331deg,88%,46%)`;
-        },
-        foreground: "var(--foreground)",
-        background: "var(--background)",
-        skeleton_background: "var(--skeleton_background)",
-        skeleton_foreground: "var(--skeleton_foreground)",
-        accent: "var(--accent)",
-        secondary: "var(--secondary)",
+        foxfire: "hsla(348deg 91% 50% / <alpha-value>)",
+        ember: "hsla(331deg 88% 46% / <alpha-value>)",
+        foreground: "rgb(var(--foreground) / <alpha-value>)",
+        background: "rgb(var(--background) / <alpha-value>)",
+        skeleton_background: "rgb(var(--skeleton_background) / <alpha-value>)",
+        skeleton_foreground: "rgb(var(--skeleton_foreground) / <alpha-value>)",
+        accent: "rgb(var(--accent) / <alpha-value>)",
+        secondary: "rgb(var(--secondary) / <alpha-value>)",
       },
       keyframes: {
         skeleton: {
