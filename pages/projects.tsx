@@ -1,49 +1,16 @@
 import { Text } from "@/components/text";
-
-import { Section } from "@/components/containers/Section";
 import { ProjectCard } from "@/components/Card/project";
 import { IconType } from "@/components/icons";
 
-const ProjectItem = ({ label, description, tags, href }: ProjectItemArgs) => {
-  return (
-    <article className="group select-none py-8 mb-8">
-      <a href={href}>
-        <div className="max-w-md">
-          <div>
-            <Text
-              as="h3"
-              color="foreground"
-              weight="semibold"
-              className="mb-2 flex items-center gap-2"
-            >
-              {label}
-            </Text>
-          </div>
-          <div>
-            <Text
-              as="p"
-              color="secondary"
-              weight="normal"
-              className="pb-1 mb-1"
-            >
-              {description}
-            </Text>
-          </div>
-        </div>
-      </a>
-      <div>
-        <ul className="flex flex-wrap max-w-96 gap-4 text-white font-mono">
-          {tags.map((tag) => {
-            return <li className="py-1 px-2 bg-accent rounded-lg">{tag}</li>;
-          })}
-        </ul>
-      </div>
-    </article>
-  );
-};
-
 const Projects = () => {
   const projects = [
+    {
+      label: "nworking",
+      description: "IPv4 network and subnet calculator for study purposes",
+      tags: ["csharp", "byte operations", "files"],
+      icon: "python" as IconType,
+      href: "https://github.com/itshoro/mtag",
+    },
     {
       label: "BASHO",
       description:
@@ -62,27 +29,20 @@ const Projects = () => {
   ];
 
   return (
-    <>
-      <Section className="pt-24 md:w-[min(100vw_-_4rem,_70ch)] pb-8">
+    <div className="pt-8 px-6">
+      <div className="pt-24 max-w-[64ch] 2xl:max-w-[74ch] mx-auto pb-8">
         <Text color="foreground" weight="semibold" className="text-xl" as="h1">
           Projects
         </Text>
-      </Section>
+      </div>
 
-      <Section className="space-y-8 md:w-[min(100vw_-_4rem,_70ch)]">
+      <div className="space-y-8 max-w-[64ch] 2xl:max-w-[74ch] mx-auto">
         {projects.map((project) => (
           <ProjectCard key={project.label} {...project} />
         ))}
-      </Section>
-    </>
+      </div>
+    </div>
   );
-};
-
-type ProjectItemArgs = {
-  label: string;
-  description: string;
-  tags: string[];
-  href: string;
 };
 
 export default Projects;

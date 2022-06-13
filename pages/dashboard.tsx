@@ -1,4 +1,3 @@
-import { InnerSection } from "@/components/containers/Section";
 import { TopTracks } from "@/components/spotify";
 import { AniListCard, GithubCard } from "@/components/stats/StatCard/";
 
@@ -6,8 +5,8 @@ import { Text } from "@/components/text";
 import { Link } from "@/components/link";
 
 const Dashboard = () => (
-  <>
-    <InnerSection className="pt-24 md:w-[min(100vw_-_4rem,_70ch)] mb-2">
+  <div className="pt-8 px-6">
+    <div className="pt-24 max-w-[64ch] 2xl:max-w-[74ch] mx-auto mb-2">
       <Text color="foreground" weight="semibold" className="text-xl" as="h1">
         Dashboard
       </Text>
@@ -20,14 +19,14 @@ const Dashboard = () => (
         </Link>
         .
       </Text>
-    </InnerSection>
-    <InnerSection className="py-8 md:w-[min(100vw_-_4rem,_70ch)]">
+    </div>
+    <div className="py-8 max-w-[64ch] 2xl:max-w-[74ch] mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <GithubCard />
         <AniListCard />
       </div>
-    </InnerSection>
-    <InnerSection className="py-8 space-y-2 md:w-[min(100vw_-_4rem,_70ch)]">
+    </div>
+    <div className="py-8 space-y-2 max-w-[64ch] 2xl:max-w-[74ch] mx-auto">
       <Text
         as="h2"
         weight="semibold"
@@ -40,8 +39,8 @@ const Dashboard = () => (
       <div className="space-y-2">
         <TopTracks />
       </div>
-    </InnerSection>
-  </>
+    </div>
+  </div>
 );
 
 export default Dashboard;
