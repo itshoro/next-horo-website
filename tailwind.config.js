@@ -39,9 +39,6 @@ module.exports = {
           },
         },
       },
-      flex: {
-        expand: "0 1 100%",
-      },
       colors: {
         foxfire: "hsla(348deg 91% 50% / <alpha-value>)",
         ember: "hsla(331deg 88% 46% / <alpha-value>)",
