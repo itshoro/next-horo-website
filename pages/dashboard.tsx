@@ -20,7 +20,7 @@ const Dashboard = () => (
         .
       </Text>
     </div>
-    <div className="py-8 max-w-[64ch] 2xl:max-w-[74ch] mx-auto">
+    <div className="py-4 max-w-[64ch] 2xl:max-w-[74ch] mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <GithubCard />
         <AniListCard />
@@ -30,7 +30,7 @@ const Dashboard = () => (
       <Text
         as="h2"
         weight="semibold"
-        className="pb-2 mb-2 text-lg"
+        className="pb-2 mb-4 text-lg"
         color="foreground"
         style={{ lineHeight: "1.1" }}
       >
