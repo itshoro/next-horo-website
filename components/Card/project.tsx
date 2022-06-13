@@ -1,7 +1,6 @@
-import { CSSProperties, DetailedHTMLProps, FC, HTMLAttributes } from "react";
+import { DetailedHTMLProps, FC, HTMLAttributes } from "react";
 import Icon, { IconProps, IconType } from "@/components/icons";
 
-import styles from "./project.module.css";
 import { Body } from ".";
 import { Bleed } from "./bleed";
 
@@ -33,7 +32,6 @@ const ProjectCard: FC<
 > = ({ label, description, href, icon, tags, className, ...props }) => {
   return (
     <Body className="overflow-hidden">
-      <Bleed accent={mapIconToColor(icon)} />
       <div className="p-6 isolate">
         <div className="flex flex-col md:flex-row items-start gap-4 mb-2">
           <div className="">
@@ -49,7 +47,9 @@ const ProjectCard: FC<
         <div className="pt-4 border-t w-full border-t-white/10">
           <a
             {...props}
-            className={[className, "block ml-auto"].filter((x) => x).join(" ")}
+            className={[className, "peer inline-block ml-auto"]
+              .filter((x) => x)
+              .join(" ")}
             href={href}
           >
             <div className="group rounded-lg bg-black/30 hover:bg-black/50 transition-colors duration-200 ease-out inline-block p-4">
@@ -61,6 +61,7 @@ const ProjectCard: FC<
               </div>
             </div>
           </a>
+          <Bleed accent={mapIconToColor(icon)} />
         </div>
       </div>
     </Body>
@@ -73,9 +74,9 @@ const Minimal: FC<
 > = ({ label, icon, href, ...props }) => {
   return (
     <a {...props} href={href}>
-      <Body className={"group overflow-hidden"}>
-        <Bleed accent={mapIconToColor(icon)} />
-        <div className="p-4 space-y-2 isolate">
+      <Body className="group overflow-hidden">
+        <div className="p-4 isolate">
+          <Bleed accent={mapIconToColor(icon)} />
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <IconWrapper type={icon} size={20} />

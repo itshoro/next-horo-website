@@ -14,7 +14,7 @@ const Bleed: FC<BleedProps> = ({ accent }) => {
         } as CSSProperties
       }
       className={[
-        "absolute top-0 left-0 w-44 max-h-full aspect-square opacity-20 rounded-lg",
+        "absolute top-0 left-0 w-44 max-h-full aspect-square opacity-20 rounded-lg -z-10",
         styles.bleed,
       ].join(" ")}
     />

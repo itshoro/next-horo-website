@@ -3,6 +3,6 @@
     transition: ease-out transform 300ms;
 }
 
-*:hover > .bleed {
+:global(.group):hover .bleed, :global(.peer):hover + .bleed {
     transform: scale(10);
 }
