@@ -1,9 +1,32 @@
 import { Text } from "@/components/text";
-import { ProjectCard } from "@/components/Card/project";
+import { DetailedProjectProps, ProjectCard } from "@/components/Card/project";
 import { IconType } from "@/components/icons";
+import { FC } from "react";
 
-const Projects = () => {
-  const projects = [
+interface ProjectProps {
+  projects: DetailedProjectProps[];
+}
+
+const Projects: FC<ProjectProps> = ({ projects }) => {
+  return (
+    <div className="pt-8 px-6">
+      <div className="pt-24 max-w-[64ch] 2xl:max-w-[74ch] mx-auto pb-8">
+        <Text color="foreground" weight="semibold" className="text-xl" as="h1">
+          Projects
+        </Text>
+      </div>
+
+      <div className="space-y-8 max-w-[64ch] 2xl:max-w-[74ch] mx-auto">
+        {projects.map((project) => (
+          <ProjectCard key={project.label} {...project} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const getStaticProps = async () => {
+  const projects: DetailedProjectProps[] = [
     {
       label: "nworking",
       description: "IPv4 network and subnet calculator for study purposes",
@@ -28,21 +51,10 @@ const Projects = () => {
     },
   ];
 
-  return (
-    <div className="pt-8 px-6">
-      <div className="pt-24 max-w-[64ch] 2xl:max-w-[74ch] mx-auto pb-8">
-        <Text color="foreground" weight="semibold" className="text-xl" as="h1">
-          Projects
-        </Text>
-      </div>
-
-      <div className="space-y-8 max-w-[64ch] 2xl:max-w-[74ch] mx-auto">
-        {projects.map((project) => (
-          <ProjectCard key={project.label} {...project} />
-        ))}
-      </div>
-    </div>
-  );
+  return {
+    props: { projects },
+  };
 };
 
 export default Projects;
+export { getStaticProps };

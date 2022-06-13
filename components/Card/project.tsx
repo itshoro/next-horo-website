@@ -4,13 +4,13 @@ import Icon, { IconProps, IconType } from "@/components/icons";
 import { Body } from ".";
 import { Bleed } from "./bleed";
 
-interface ProjectProps {
+export interface ProjectProps {
   label: string;
   icon: IconType;
   href: string;
 }
 
-interface DetailedProjectProps extends ProjectProps {
+export interface DetailedProjectProps extends ProjectProps {
   description: string;
   tags: string[];
 }

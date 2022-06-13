@@ -3,7 +3,6 @@ import Icon, { IconType } from "@/components/icons";
 import { Link } from "@/components/link";
 import { GetStaticProps } from "next";
 import Image from "next/image";
-import { DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from "react";
 
 import { promises as fs } from "fs";
 import path from "path";

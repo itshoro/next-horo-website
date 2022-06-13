@@ -1,9 +1,5 @@
 import { Carousel } from "@/components/Carousel";
 import { NowPlaying } from "@/components/spotify";
-import {
-  sectionPaddingX,
-  sectionMarginX,
-} from "@/components/containers/Section";
 
 import Link from "next/link";
 import Image from "next/image";
