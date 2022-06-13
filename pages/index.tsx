@@ -36,19 +36,19 @@ const Index = ({ favorite_tools }: { favorite_tools: any }) => {
             className="scroll-m-6"
             label="nworking"
             icon={"python" as IconType}
-            href=""
+            href="https://github.com/itshoro/nworking"
           />
           <Minimal
             className="scroll-m-6"
             label="Basho"
             icon={"python" as IconType}
-            href=""
+            href="https://github.com/itshoro/basho"
           />
           <Minimal
             className="scroll-m-6"
             label="MTag"
             icon={"csharp" as IconType}
-            href=""
+            href="https://github.com/itshoro/mtag"
           />
         </Carousel.Items>
       </Carousel>
@@ -155,43 +155,6 @@ const Index = ({ favorite_tools }: { favorite_tools: any }) => {
         </div>
       </section>
     </>
-  );
-};
-
-interface ProjectItemProps {
-  icon: ReactNode;
-  label: string;
-  description: string;
-}
-const ProjectItem: FC<
-  ProjectItemProps &
-    DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
-> = ({ label, description, className, ...props }) => {
-  return (
-    <div
-      className={[
-        className,
-        "project-item rounded-2xl pt-4 md:min-w-max bg-accent",
-      ]
-        .filter((x) => x)
-        .join(" ")}
-      {...props}
-    >
-      <div className="py-2 pl-2 pr-8 inline-flex items-center content-start gap-2">
-        <div className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-accent">
-          <div className="transform translate-y-[2px]">&#8599;</div>
-        </div>
-        <div className="py-4">
-          <div className="text-white font-semibold">{label}</div>
-          <div
-            className="mix-blend-difference text-sm text-white"
-            color="foreground"
-          >
-            {description}
-          </div>
-        </div>
-      </div>
-    </div>
   );
 };
 

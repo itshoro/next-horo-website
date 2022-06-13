@@ -9,7 +9,7 @@ const Projects = () => {
       description: "IPv4 network and subnet calculator for study purposes",
       tags: ["csharp", "byte operations", "files"],
       icon: "python" as IconType,
-      href: "https://github.com/itshoro/mtag",
+      href: "https://github.com/itshoro/nworking",
     },
     {
       label: "BASHO",
