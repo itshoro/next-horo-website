@@ -8,7 +8,7 @@ import { DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from "react";
 
 import { promises as fs } from "fs";
 import path from "path";
-import { Bars } from "./_app";
+import { Bars } from "@/components/bars";
 import { Minimal } from "@/components/Card/project";
 
 const Index = ({ favorite_tools }: { favorite_tools: any }) => {
