@@ -22,6 +22,9 @@ const Footer = () => (
               layout="fixed"
               width={48}
               height={48}
+              alt=""
+              priority={false}
+              quality={50}
             />
 
             <div className="absolute left-0 h-full w-16 bg-gradient-to-r from-black" />

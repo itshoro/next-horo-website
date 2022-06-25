@@ -5,6 +5,7 @@ import {
   KeyboardEvent,
   MutableRefObject,
   createRef,
+  useCallback,
 } from "react";
 import { useRouter } from "next/router";
 import { Button } from "../button";
@@ -88,14 +89,14 @@ const Navigation = ({
 
   const router = useRouter();
 
-  const handleRouteChangeComplete = (
-    url: string,
-    { shallow }: { shallow: boolean }
-  ) => {
-    if (routeChangeCompleteCallback)
-      routeChangeCompleteCallback(url, { shallow });
-    dispatch({ type: ActionType.CloseMenu });
-  };
+  const handleRouteChangeComplete = useCallback(
+    (url: string, { shallow }: { shallow: boolean }) => {
+      if (routeChangeCompleteCallback)
+        routeChangeCompleteCallback(url, { shallow });
+      dispatch({ type: ActionType.CloseMenu });
+    },
+    [dispatch, routeChangeCompleteCallback]
+  );
 
   useEffect(() => {
     const animationFrame = requestAnimationFrame(() => {
@@ -107,7 +108,7 @@ const Navigation = ({
     });
 
     return () => cancelAnimationFrame(animationFrame);
-  }, [navState.focusedItem]);
+  }, [navState.focusedItem, navState.linksRef]);
 
   useWindowEvent("resize", (event) => {
     if (matchMedia("(min-width: 640px)")) {
@@ -126,7 +127,7 @@ const Navigation = ({
     return () => {
       router.events.off("routeChangeComplete", handleRouteChangeComplete);
     };
-  }, [router]);
+  }, [router, handleRouteChangeComplete]);
 
   const handleKeyDownButton = (event: KeyboardEvent) => {
     switch (event.key) {
@@ -252,6 +253,7 @@ const Navigation = ({
         <div className="flex items-center justify-between py-3">
           <div className="h-auto z-50">{children}</div>
           <Button
+            aria-label="Menu"
             ref={navState.buttonRef}
             className="group rounded md:hidden p-1 bg-transparent hover:bg-white/10 focus:bg-white/10 active:bg-white/[.15] transition-colors duration-150"
             onClick={() => {

@@ -1,5 +1,7 @@
 import {
+  DetailedHTMLProps,
   forwardRef,
+  HTMLAttributes,
   KeyboardEventHandler,
   MouseEventHandler,
   ReactNode,
@@ -16,6 +18,7 @@ const Button = forwardRef(
       onKeyDown,
       prefix,
       suffix,
+      ...props
     }: ButtonArgs,
     ref: Ref<HTMLButtonElement>
   ) => {
@@ -26,6 +29,7 @@ const Button = forwardRef(
         onKeyDown={onKeyDown}
         disabled={disabled}
         className={className}
+        {...props}
       >
         {prefix} {children} {suffix}
       </button>
@@ -41,6 +45,8 @@ export type ButtonArgs = {
   disabled?: boolean;
   onClick?: MouseEventHandler;
   onKeyDown?: KeyboardEventHandler;
-};
+} & DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+
+Button.displayName = "Button";
 
 export { Button };

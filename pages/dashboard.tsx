@@ -12,10 +12,10 @@ const Dashboard = () => (
       </Text>
 
       <Text as="p" className="my-4 leading-normal" color="secondary">
-        I'm tracking some interesting and sometimes just nerdy stats about
+        I&apos;m tracking some interesting and sometimes just nerdy stats about
         myself, this is realized through custom routes and is inspired by{" "}
         <Link external={true} href="https://leerob.io/dashboard">
-          Lee Robinson's dashboard
+          Lee Robinson&apos;s dashboard
         </Link>
         .
       </Text>

@@ -1,27 +1,20 @@
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentContext,
-} from "next/document";
-class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
-  }
+import { Html, Head, Main, NextScript } from "next/document";
 
-  render() {
-    return (
-      <Html>
-        <Head />
-        <body className="bg-black text-secondary">
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
-}
+const Document = () => {
+  return (
+    <Html lang="en">
+      <Head>
+        <meta
+          name="description"
+          content="Computer Science Major and aspiring software engineer from Germany. It's all about me, Tim Nelke, trying to share my knowledge and projects."
+        />
+      </Head>
+      <body className="dark:bg-black text-secondary">
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
+};
 
-export default MyDocument;
+export default Document;

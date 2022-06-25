@@ -21,6 +21,7 @@ const Logo = () => (
           </clipPath>
         </defs>
       </svg>
+      <div className="sr-only">Home</div>
     </a>
   </Link>
 );

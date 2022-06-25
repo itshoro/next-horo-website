@@ -1,7 +1,7 @@
-import { getUserStats } from "@/lib/api/anilist";
+import { getUserData } from "@/lib/api/anilist";
 
-export default async (_, res) => {
-  const data = await getUserStats();
+const fetchAnilistData = async (_, res) => {
+  const data = await getUserData();
 
   const userData = {
     anime_watched: data?.anime.minutesWatched,
@@ -11,3 +11,5 @@ export default async (_, res) => {
     ...userData,
   });
 };
+
+export default fetchAnilistData;

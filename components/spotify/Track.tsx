@@ -27,6 +27,7 @@ const Track: FC<TrackArgs> = ({
               width={64}
               height={64}
               src={imageSrc}
+              alt=""
             />
           )}
         </Entity.Thumbnail>

@@ -1,6 +1,6 @@
 import { getUserData } from "@/lib/api/github";
 
-export default async (_, res) => {
+const GithubApi = async (_, res) => {
   const data = await getUserData();
 
   const userData = {
@@ -11,3 +11,5 @@ export default async (_, res) => {
     ...userData,
   });
 };
+
+export default GithubApi;

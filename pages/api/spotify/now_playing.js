@@ -1,6 +1,6 @@
 import { getNowPlaying } from "@/lib/api/spotify";
 
-export default async (_, res) => {
+const SpotifyApi = async (_, res) => {
   const data = await getNowPlaying();
   const { item } = data;
 
@@ -15,3 +15,5 @@ export default async (_, res) => {
 
   return res.status(200).json({ ...nowPlaying });
 };
+
+export default SpotifyApi;

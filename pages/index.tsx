@@ -8,6 +8,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import { Bars } from "@/components/bars";
 import { Minimal } from "@/components/Card/project";
+import Head from "next/head";
 
 const Index = ({ favorite_tools }: { favorite_tools: any }) => {
   return (
@@ -17,7 +18,7 @@ const Index = ({ favorite_tools }: { favorite_tools: any }) => {
 
       <div className="pt-8 px-6">
         <div className="max-w-[64ch] 2xl:max-w-[74ch] mx-auto">
-          <div className="text-white font-semibold">Selected Projects</div>
+          <h2 className="text-white font-semibold">Selected Projects</h2>
         </div>
       </div>
       <Carousel
@@ -71,7 +72,7 @@ const Index = ({ favorite_tools }: { favorite_tools: any }) => {
 
       <section>
         <div className="max-w-[64ch] 2xl:max-w-[74ch] mx-auto">
-          <h3 className="text-white font-semibold px-8 md:p-0">Quick Facts</h3>
+          <h2 className="text-white font-semibold px-8 md:p-0">Quick Facts</h2>
         </div>
         <div className="mb-8 md:max-w-[64ch] 2xl:max-w-[74ch] mx-auto">
           <Carousel
@@ -183,7 +184,7 @@ const TextSection = () => {
         </svg>
       </div>
       <div className="relative text-white max-w-[50ch] xl:max-w-[60ch] py-24 text-center text-lg mx-auto leading-relaxed px-6">
-        Currently I'm threading the needle between being a{" "}
+        Currently I&apos;m threading the needle between being a{" "}
         <span className="font-caveat text-xl px-1">jack-of-all-trades</span> and
         becoming an <span className="font-caveat text-xl">expert</span>, who
         blends design knowledge and application development.
@@ -195,6 +196,9 @@ const TextSection = () => {
 const Landing = () => {
   return (
     <>
+      <Head>
+        <title>Home | Tim Nelke</title>
+      </Head>
       <Bars />
       <div className="flex flex-col justify-center pt-16 px-6">
         <div className="max-w-[64ch] 2xl:max-w-[74ch] w-full mx-auto border-b-accent border-b">
@@ -207,6 +211,7 @@ const Landing = () => {
             quality={100}
             width={96}
             height={96}
+            alt=""
           />
           <div className="py-6 2xl:pb-8">
             <div className="font-semibold text-white">Tim Nelke</div>
@@ -214,11 +219,11 @@ const Landing = () => {
           </div>
         </div>
         <div className="py-12 max-w-[64ch] 2xl:max-w-[74ch] mx-auto">
-          <div className="text-xl mb-4 font-caveat text-white">Ohayō.</div>
+          <h1 className="text-xl mb-4 font-caveat text-white">Ohayō.</h1>
 
           <div className="space-y-4 my-2 2xl:my-4 leading-relaxed">
             <p>
-              I'm a Junior Software Developer working{" "}
+              I&apos;m a Junior Software Developer working{" "}
               <Link href="https://www.publicplan.de" external={true}>
                 <span className="mr-1">@</span>publicplan GmbH
               </Link>
@@ -226,7 +231,7 @@ const Landing = () => {
               sector.
             </p>
             <p>
-              Outside of work I'd be best described as either a walking
+              Outside of work I&apos;d be best described as either a walking
               encyclopedia about trivia videos you would watch at 3am or
               fascinated with Japan.
             </p>

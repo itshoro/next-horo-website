@@ -1,6 +1,6 @@
 import { getTopTracks } from "@/lib/api/spotify";
 
-export default async (_, res) => {
+const SpotifyApi = async (_, res) => {
   const { items } = await getTopTracks();
 
   const tracks = items.map((track) => ({
@@ -13,3 +13,5 @@ export default async (_, res) => {
 
   return res.status(200).json({ tracks: [...tracks] });
 };
+
+export default SpotifyApi;
