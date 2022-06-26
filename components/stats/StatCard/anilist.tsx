@@ -9,7 +9,7 @@ const AniListCard = ({ loading = false }: LoadingCardArgs) => {
       <div
         className={[
           (!data || loading) && "skeleton rounded select-none",
-          "font-medium text-white text-lg tabular-nums",
+          "font-medium text-foreground text-lg tabular-nums",
         ].join(" ")}
       >
         {data

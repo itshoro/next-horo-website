@@ -39,7 +39,7 @@ const ProjectCard: FC<
           </div>
           <div className="space-y-2 w-full">
             <div className="flex gap-4 items-center justify-start w-full">
-              <div className="font-medium text-white">{label}</div>
+              <div className="font-medium text-foreground">{label}</div>
             </div>
             <div className="break-words pb-4">{description}</div>
           </div>
@@ -52,9 +52,9 @@ const ProjectCard: FC<
               .join(" ")}
             href={href}
           >
-            <div className="group rounded-lg bg-black/30 hover:bg-black/50 transition-colors duration-200 ease-out inline-block p-4">
+            <div className="group rounded-lg border border-accent dark:border-transparent dark:bg-black/30 dark:hover:bg-black/50 transition-colors duration-200 ease-out inline-block p-4">
               <div className="flex items-center gap-2">
-                <span className="text-sm font-semibold text-white">
+                <span className="text-sm font-semibold text-foreground">
                   View on
                 </span>
                 <Icon type="github" size={16} />
@@ -80,7 +80,7 @@ const Minimal: FC<
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <IconWrapper type={icon} size={20} />
-              <h1 className="text-white font-medium text-sm">{label}</h1>
+              <h1 className="text-foreground font-medium text-sm">{label}</h1>
             </div>
             <HoverArrow />
           </div>
@@ -114,7 +114,7 @@ export const HoverArrow = () => {
 
 const IconWrapper: FC<IconProps> = (props) => {
   return (
-    <div className="rounded-lg bg-black/30 inline-block p-4">
+    <div className="rounded-lg border border-accent dark:border-transparent dark:bg-black/30 inline-block p-4 z-10">
       <Icon {...props} />
     </div>
   );

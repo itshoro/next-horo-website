@@ -1,10 +1,4 @@
-import {
-  CSSProperties,
-  DetailedHTMLProps,
-  FC,
-  HTMLAttributes,
-  ReactNode,
-} from "react";
+import { DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from "react";
 
 export interface CardProps {
   children?: ReactNode;
@@ -15,7 +9,7 @@ const Body: FC<
 > = ({ children, className, ...props }) => {
   return (
     <div
-      className={[className, "bg-accent rounded-2xl relative"]
+      className={[className, "dark:bg-accent bg-black/5 rounded-2xl relative"]
         .filter((x) => x)
         .join(" ")}
       {...props}

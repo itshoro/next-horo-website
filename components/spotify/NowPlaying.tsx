@@ -37,7 +37,7 @@ const NowPlaying = ({ loading }: NowPlayingArgs) => {
       </div>
       <div className="flex flex-col lg:items-end max-w-xs">
         <a
-          className="font-medium truncate flex-shrink-0 text-white rounded-md transition-all origin-left lg:origin-right"
+          className="font-medium truncate flex-shrink-0 text-foreground rounded-md transition-all origin-left lg:origin-right"
           href={songUrl ?? "#"}
         >
           {title ?? "Not Playing"}

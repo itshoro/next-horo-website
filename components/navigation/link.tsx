@@ -10,9 +10,9 @@ const Link = ({ href, children }: LinkArgs) => {
     <NextLink href={href}>
       <a
         className={[
-          "block font-medium text-base md:text-sm px-3 border-t rounded py-1 my-2 md:my-0 hover:text-white active:text-foreground transition-colors duration-500",
+          "block font-medium text-base md:text-sm px-3 rounded py-1 my-2 md:my-0 hover:text-foreground active:text-foreground transition-colors duration-500",
           isCurrentPage
-            ? "text-foreground bg-white/10 border-white/10"
+            ? "text-foreground bg-foreground/5 dark:bg-opacity-10 dark:border-foreground/10"
             : "text-secondary border-transparent",
         ]
           .filter((x) => x)

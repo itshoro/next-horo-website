@@ -7,7 +7,7 @@ import Image from "next/image";
 const Footer = () => (
   <footer className="pt-16 pb-6 md:mr-auto">
     <div className="text-sm">
-      <div className="border-t border-white border-opacity-10 mx-8 md:mx-24" />
+      <div className="border-t border-foreground border-opacity-10 mx-8 md:mx-24" />
       <Carousel
         direction="x"
         snap="proximity"
@@ -27,7 +27,7 @@ const Footer = () => (
               quality={50}
             />
 
-            <div className="absolute left-0 h-full w-16 bg-gradient-to-r from-black" />
+            <div className="absolute left-0 h-full w-16 bg-gradient-to-r from-background" />
           </div>
         </Carousel.Fixed>
         <Carousel.Items
@@ -37,13 +37,13 @@ const Footer = () => (
           className="items-center pr-6 space-x-4 md:flex md:w-full md:p-0"
         >
           <a
-            className="font-medium px-2 py-1 rounded-md hover:text-white focus:text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-colors"
+            className="font-medium px-2 py-1 rounded-md hover:text-foreground focus:text-foreground focus:bg-foreground focus:bg-opacity-5 hover:bg-foreground hover:bg-opacity-5 transition-colors"
             href="https://github.com/itshoro"
           >
             Github
           </a>
           <a
-            className="font-medium px-2 py-1 rounded-md hover:text-white focus:text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-colors"
+            className="font-medium px-2 py-1 rounded-md hover:text-foreground focus:text-foreground focus:bg-foreground focus:bg-opacity-5 hover:bg-foreground hover:bg-opacity-5 transition-colors"
             href="https://twitter.com/horo_dev"
           >
             Twitter
@@ -58,21 +58,21 @@ const Footer = () => (
         <ul className="flex flex-col space-y-4">
           <li>
             <Link href="/">
-              <a className="font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-md hover:text-white focus:text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-all">
+              <a className="font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-md hover:text-foreground focus:text-foreground focus:bg-foreground focus:bg-opacity-5 hover:bg-foreground hover:bg-opacity-5 transition-all">
                 Home
               </a>
             </Link>
           </li>
           <li>
             <Link href="/projects">
-              <a className="font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-md hover:text-white focus:text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-all">
+              <a className="font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-md hover:text-foreground focus:text-foreground focus:bg-foreground focus:bg-opacity-5 hover:bg-foreground hover:bg-opacity-5 transition-all">
                 Projects
               </a>
             </Link>
           </li>
           <li>
             <Link href="/dashboard">
-              <a className="font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-md hover:text-white focus:text-white focus:bg-white focus:bg-opacity-5 hover:bg-white hover:bg-opacity-5 transition-all">
+              <a className="font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-md hover:text-foreground focus:text-foreground focus:bg-foreground focus:bg-opacity-5 hover:bg-foreground hover:bg-opacity-5 transition-all">
                 Dashboard
               </a>
             </Link>

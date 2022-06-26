@@ -231,7 +231,7 @@ const Navigation = ({
   return (
     <nav
       className={[
-        "w-full md:h-12 z-10 bg-black text-white duration-500 ease-in-out backdrop-filter backdrop-blur-lg  backdrop-saturate-150",
+        "w-full md:h-12 z-10 bg-background text-foreground duration-500 ease-in-out backdrop-filter backdrop-blur-lg backdrop-saturate-150",
         navState.menuState === MenuState.Open
           ? "h-screen bg-opacity-40 "
           : "h-auto bg-opacity-20",
