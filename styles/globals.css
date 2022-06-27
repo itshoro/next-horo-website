@@ -98,7 +98,7 @@ a {
 .skeleton {
   @apply animate-skeleton;
   color: transparent !important;
-  background-image: linear-gradient(to right, #111, #3a3a3a, #111) !important;
+  background-image: linear-gradient(to right, rgb(var(--skeleton_background)), rgb(var(--skeleton_foreground)), rgb(var(--skeleton_background))) !important;
   background-size: 400% 400% !important;
 }
 
