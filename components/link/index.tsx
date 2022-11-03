@@ -3,12 +3,13 @@ import { ReactNode } from "react";
 
 const Link = ({ external = false, href, children }: LinkArgs) => {
   return !external ? (
-    <NextLink href={href}>
-      <a className="relative group text-[#F686B5] animated-underline">
-        <span className="isolate">
-          <span>{children}</span>
-        </span>
-      </a>
+    <NextLink
+      href={href}
+      className="relative group text-[#F686B5] animated-underline"
+    >
+      <span className="isolate">
+        <span>{children}</span>
+      </span>
     </NextLink>
   ) : (
     <a href={href} className="relative group text-[#F686B5] animated-underline">

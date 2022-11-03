@@ -57,24 +57,27 @@ const Footer = () => (
       <nav className="pb-16 px-8 md:px-24">
         <ul className="flex flex-col space-y-4">
           <li>
-            <Link href="/">
-              <a className="font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-md hover:text-foreground focus:text-foreground focus:bg-foreground focus:bg-opacity-5 hover:bg-foreground hover:bg-opacity-5 transition-all">
-                Home
-              </a>
+            <Link
+              href="/"
+              className="font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-md hover:text-foreground focus:text-foreground focus:bg-foreground focus:bg-opacity-5 hover:bg-foreground hover:bg-opacity-5 transition-all"
+            >
+              Home
             </Link>
           </li>
           <li>
-            <Link href="/projects">
-              <a className="font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-md hover:text-foreground focus:text-foreground focus:bg-foreground focus:bg-opacity-5 hover:bg-foreground hover:bg-opacity-5 transition-all">
-                Projects
-              </a>
+            <Link
+              href="/projects"
+              className="font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-md hover:text-foreground focus:text-foreground focus:bg-foreground focus:bg-opacity-5 hover:bg-foreground hover:bg-opacity-5 transition-all"
+            >
+              Projects
             </Link>
           </li>
           <li>
-            <Link href="/dashboard">
-              <a className="font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-md hover:text-foreground focus:text-foreground focus:bg-foreground focus:bg-opacity-5 hover:bg-foreground hover:bg-opacity-5 transition-all">
-                Dashboard
-              </a>
+            <Link
+              href="/dashboard"
+              className="font-medium hover:px-2 focus:px-2 hover:py-1 focus:py-1 rounded-md hover:text-foreground focus:text-foreground focus:bg-foreground focus:bg-opacity-5 hover:bg-foreground hover:bg-opacity-5 transition-all"
+            >
+              Dashboard
             </Link>
           </li>
         </ul>
