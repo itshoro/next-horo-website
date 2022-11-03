@@ -208,9 +208,7 @@ const Landing = () => {
         <div className="max-w-[64ch] 2xl:max-w-[74ch] w-full mx-auto border-b-accent border-b">
           <Image
             priority={true}
-            layout="fixed"
-            className="rounded-full"
-            objectFit="cover"
+            className="rounded-full  w-24 h-24 object-cover"
             src="/profile.jpg"
             quality={100}
             width={96}

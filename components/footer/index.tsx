@@ -16,10 +16,8 @@ const Footer = () => (
         <Carousel.Fixed position="left-0">
           <div className="inline-flex">
             <Image
-              className="rounded-full z-10"
-              objectFit="cover"
+              className="rounded-full z-10 w-12 h-12 object-cover"
               src="/profile.jpg"
-              layout="fixed"
               width={48}
               height={48}
               alt=""

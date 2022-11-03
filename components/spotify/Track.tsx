@@ -22,8 +22,7 @@ const Track: FC<TrackArgs> = ({
         <Entity.Thumbnail className="w-16 h-16">
           {!loading && (
             <Image
-              className="flex-shrink-0 rounded-lg overflow-hidden"
-              layout="fixed"
+              className="flex-shrink-0 rounded-lg overflow-hidden w-8 h-8"
               width={64}
               height={64}
               src={imageSrc}
